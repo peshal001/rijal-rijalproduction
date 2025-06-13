@@ -91,138 +91,7 @@
       <section id="blog-posts" class="blog-posts section">
         <div class="container">
           <div class="row gy-4">
-            <!-- First Blog Post -->
-            <div class="col-lg-4">
-              <article>
-                <div class="post-img">
-                  <img src="assets/img/blog/blog-1.jpg" alt="Film Industry News" class="img-fluid" />
-                </div>
-                <p class="post-category">Industry Insights</p>
-                <h2 class="title">
-                  <a href="blog-details.html">The Evolution of Nepali Cinema: A Journey Through Time</a>
-                </h2>
-                <div class="d-flex align-items-center">
-                  <img src="assets/img/blog/blog-author-2.jpg" alt="Author" class="img-fluid post-author-img flex-shrink-0" />
-                  <div class="post-meta">
-                    <p class="post-author">Rajesh Thapa</p>
-                    <p class="post-date">
-                      <time datetime="2024-01-10">Jan 10, 2024</time>
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <!-- End post list item -->
-
-            <div class="col-lg-4">
-              <article>
-                <div class="post-img">
-                  <img src="assets/img/blog/blog-2.jpg" alt="Wedding Video Production" class="img-fluid" />
-                </div>
-                <p class="post-category">Behind the Scenes</p>
-                <h2 class="title">
-                  <a href="blog-details.html">Capturing Love Stories: The Art of Wedding Videography</a>
-                </h2>
-                <div class="d-flex align-items-center">
-                  <img src="assets/img/blog/blog-author-3.jpg" alt="Author" class="img-fluid post-author-img flex-shrink-0" />
-                  <div class="post-meta">
-                    <p class="post-author">Priya Sharma</p>
-                    <p class="post-date">
-                      <time datetime="2024-01-15">Jan 15, 2024</time>
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <!-- End post list item -->
-
-            <div class="col-lg-4">
-              <article>
-                <div class="post-img">
-                  <img src="assets/img/blog/blog-3.jpg" alt="Commercial Production" class="img-fluid" />
-                </div>
-                <p class="post-category">Technical Guide</p>
-                <h2 class="title">
-                  <a href="blog-details.html">Essential Equipment for Professional Video Production</a>
-                </h2>
-                <div class="d-flex align-items-center">
-                  <img src="assets/img/blog/blog-author-4.jpg" alt="Author" class="img-fluid post-author-img flex-shrink-0" />
-                  <div class="post-meta">
-                    <p class="post-author">Amit Gurung</p>
-                    <p class="post-date">
-                      <time datetime="2024-01-20">Jan 20, 2024</time>
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <!-- End post list item -->
-
-            <div class="col-lg-4">
-              <article>
-                <div class="post-img">
-                  <img src="assets/img/blog/blog-4.jpg" alt="Documentary Production" class="img-fluid" />
-                </div>
-                <p class="post-category">Documentary</p>
-                <h2 class="title">
-                  <a href="blog-details.html">Exploring Nepal's Hidden Stories: Our Documentary Journey</a>
-                </h2>
-                <div class="d-flex align-items-center">
-                  <img src="assets/img/blog/blog-author-5.jpg" alt="Author" class="img-fluid post-author-img flex-shrink-0" />
-                  <div class="post-meta">
-                    <p class="post-author">Sita Tamang</p>
-                    <p class="post-date">
-                      <time datetime="2024-01-25">Jan 25, 2024</time>
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <!-- End post list item -->
-
-            <div class="col-lg-4">
-              <article>
-                <div class="post-img">
-                  <img src="assets/img/blog/blog-5.jpg" alt="Cinematography" class="img-fluid" />
-                </div>
-                <p class="post-category">Creative Process</p>
-                <h2 class="title">
-                  <a href="blog-details.html">The Magic of Color Grading: Transforming Raw Footage into Art</a>
-                </h2>
-                <div class="d-flex align-items-center">
-                  <img src="assets/img/blog/blog-author-6.jpg" alt="Author" class="img-fluid post-author-img flex-shrink-0" />
-                  <div class="post-meta">
-                    <p class="post-author">Bikram Thapa</p>
-                    <p class="post-date">
-                      <time datetime="2024-01-30">Jan 30, 2024</time>
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <!-- End post list item -->
-
-            <div class="col-lg-4">
-              <article>
-                <div class="post-img">
-                  <img src="assets/img/blog/blog-6.jpg" alt="Sound Design" class="img-fluid" />
-                </div>
-                <p class="post-category">Audio Production</p>
-                <h2 class="title">
-                  <a href="blog-details.html">Sound Design Secrets: Creating Immersive Audio Experiences</a>
-                </h2>
-                <div class="d-flex align-items-center">
-                  <img src="assets/img/blog/blog-author.jpg" alt="Author" class="img-fluid post-author-img flex-shrink-0" />
-                  <div class="post-meta">
-                    <p class="post-author">Deepak Shrestha</p>
-                    <p class="post-date">
-                      <time datetime="2024-02-05">Feb 05, 2024</time>
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </div>
-            <!-- End post list item -->
+            <!-- Blog posts will be dynamically loaded here by JavaScript -->
           </div>
         </div>
       </section>
@@ -320,7 +189,7 @@
             }</a>
         </h2>
         <div class="d-flex align-items-center">
-          <img src="assets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
+          <img src="${post.author_image}" alt="" class="img-fluid post-author-img flex-shrink-0">
           <div class="post-meta">
             <p class="post-author">${post.author}</p>
             <p class="post-date">
