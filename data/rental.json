@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Drone",
+    "description": "High-performance drone ideal for aerial cinematography with 4K video capabilities and GPS stabilization.",
+    "pricePerDay": 6000,
+    "brand": "DJI",
+    "model": "DJI Mavic 3 Cine",
+    "availability": true,
+    "category": "Aerial Equipment",
+    "image": "assets/img/rentals/rental-1.jpg"
+  },
+  {
+    "title": "Camera Equipment - Canon C70",
+    "description": "Canon EOS C70 Cinema Camera with Super 35mm sensor, Dual Pixel Autofocus, 4K DCI recording, and compact body.",
+    "pricePerDay": 7000,
+    "brand": "Canon",
+    "model": "EOS C70",
+    "availability": true,
+    "category": "Camera Equipment",
+    "image": "assets/img/rentals/rental-2.webp"
+  },
+  {
+    "title": "Lighting Equipment - Aputure 300D II",
+    "description": "Powerful LED light with high CRI/TLCI, perfect for studio or outdoor shooting. Comes with softbox and light stand.",
+    "pricePerDay": 2500,
+    "brand": "Aputure",
+    "model": "Light Storm 300D II",
+    "availability": true,
+    "category": "Lighting Equipment",
+    "image": "assets/img/rentals/rental-3.jpg"
+  },
+  {
+    "title": "Camera Equipment - Sony FX3",
+    "description": "Compact full-frame cinema camera ideal for handheld and gimbal shots. Features 4K 120fps recording and great low-light performance.",
+    "pricePerDay": 7500,
+    "brand": "Sony",
+    "model": "FX3",
+    "availability": true,
+    "category": "Camera Equipment",
+    "image": "assets/img/rentals/rental-4.jpg"
+  },
+  {
+    "title": "Camera Equipment - Blackmagic Pocket 6K",
+    "description": "Cinema-quality compact camera with 6K resolution, EF mount, and RAW recording for maximum flexibility in post-production.",
+    "pricePerDay": 5000,
+    "brand": "Blackmagic Design",
+    "model": "Pocket Cinema Camera 6K",
+    "availability": false,
+    "category": "Camera Equipment",
+    "image": "assets/img/rentals/rental-5.jpg"
+  },
+  {
+    "title": "Camera Equipment - RED Komodo 6K",
+    "description": "Professional-grade 6K cinema camera in a compact body. Suitable for indie films, music videos, and commercials.",
+    "pricePerDay": 12000,
+    "brand": "RED",
+    "model": "Komodo 6K",
+    "availability": true,
+    "category": "Camera Equipment",
+    "image": "assets/img/rentals/rental-6.jpg"
+  }
+]
