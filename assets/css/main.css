@@ -407,62 +407,108 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  color: var(--default-color);
-  background-color: var(--background-color);
   font-size: 14px;
-  text-align: center;
-  padding: 30px 0;
-  position: relative;
+  background-color: #2a2c39; /* Dark background as per image */
+  padding: 50px 0;
+  color: #ffffff; /* White text for contrast */
 }
 
-.footer h3 {
-  font-size: 36px;
+.footer .footer-about .logo .sitename {
+  font-size: 28px;
   font-weight: 700;
-  position: relative;
-  padding: 0;
-  margin: 0 0 15px 0;
+  color: #ffffff;
+  margin-bottom: 15px;
+  display: block;
 }
 
-.footer p {
-  font-size: 15;
-  font-style: italic;
-  padding: 0;
-  margin: 0 0 30px 0;
+.footer .footer-about p {
+  font-size: 15px;
+  line-height: 24px;
+  margin-bottom: 20px;
 }
 
-.footer .social-links {
-  margin: 0 0 30px 0;
-}
-
-.footer .social-links a {
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent-color);
-  color: var(--contrast-color);
+.footer .footer-about .social-links a {
+  color: #ffffff;
+  font-size: 18px;
+  display: inline-block;
   line-height: 1;
-  margin: 0 4px;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
+  margin-right: 10px;
   transition: 0.3s;
 }
 
-.footer .social-links a:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-  text-decoration: none;
+.footer .footer-about .social-links a:hover {
+  color: var(--accent-color); /* Use accent color on hover */
+}
+
+.footer .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer .footer-links h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-links ul li {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-links ul li a {
+  color: #ffffff;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer .footer-links ul li a:hover {
+  color: var(--accent-color);
+}
+
+.footer .footer-contact {
+  margin-bottom: 30px;
+}
+
+.footer .footer-contact h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer .footer-contact p {
+  padding: 0;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 24px;
 }
 
 .footer .copyright {
-  padding-top: 25px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  text-align: center;
+  padding-top: 30px;
+  margin-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #aaaaaa; /* Lighter grey for copyright */
 }
 
-.footer .credits {
-  font-size: 13px;
-  padding-top: 5px;
+.footer .copyright p {
+  margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
