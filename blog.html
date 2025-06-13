@@ -50,17 +50,17 @@
                 <li><a href="Behind_the_scenes.html">Behind the scenes</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#team">Team</a></li>
               </ul>
             </li>
-            <li><a href="index.html#team">Team</a></li>
-            <li><a href="blog.html" class="active">Blog</a></li>
             <li class="dropdown"><a href="#"><span>News & Updates</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
-                <li><a href="events.html">Events</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
                 <li><a href="careers.html">Careers</a></li>
                 <li><a href="index.html#faq">FAQ</a></li>
               </ul>
             </li>
+            <li><a href="rental.html">Rental</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -90,147 +90,359 @@
       <!-- Blog Posts Section -->
       <section id="blog-posts" class="blog-posts section">
         <div class="container">
-          <div class="row gy-4">
-            <!-- Blog posts will be dynamically loaded here by JavaScript -->
+          <!-- Search and Filter Section -->
+          <div class="search-filter-section mb-4">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="search-box">
+                  <input type="text" id="searchInput" class="form-control" placeholder="Search blog posts...">
+                  <i class="bi bi-search"></i>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="filter-box d-flex gap-2">
+                  <select class="form-select" id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="film-making">Film Making</option>
+                    <option value="cinematography">Cinematography</option>
+                    <option value="acting">Acting</option>
+                    <option value="directing">Directing</option>
+                    <option value="industry-news">Industry News</option>
+                  </select>
+                  <select class="form-select" id="dateFilter">
+                    <option value="">All Time</option>
+                    <option value="week">Last Week</option>
+                    <option value="month">Last Month</option>
+                    <option value="year">Last Year</option>
+                  </select>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-      <!-- /Blog Posts Section -->
 
-      <!-- Blog Pagination Section -->
-      <section id="blog-pagination" class="blog-pagination section">
-        <div class="container">
-          <div class="d-flex justify-content-center">
-            <ul id="pagination-list">
-              <li>
-                <a href="javascript:void(0)" onclick="changePage('prev')"
-                  ><i class="bi bi-chevron-left"></i
-                ></a>
-              </li>
-              <!-- Page numbers will be inserted dynamically here -->
-              <li>
-                <a href="javascript:void(0)" onclick="changePage(1)">1</a>
-              </li>
-              <li>
-                <a href="javascript:void(0)" onclick="changePage(2)">2</a>
-              </li>
-              <li>
-                <a href="javascript:void(0)" onclick="changePage(3)">3</a>
-              </li>
-              <li>
-                <a href="javascript:void(0)" onclick="changePage('next')"
-                  ><i class="bi bi-chevron-right"></i
-                ></a>
-              </li>
-            </ul>
+          <!-- Blog Grid -->
+          <div class="row gy-4" id="blog-grid">
+            <!-- Blog posts will be populated by JavaScript -->
+          </div>
+
+          <!-- Pagination -->
+          <div class="row">
+            <div class="col-12">
+              <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center" id="pagination-list">
+                  <!-- Pagination will be populated by JavaScript -->
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
       </section>
+
+      <style>
+        .search-filter-section {
+          background: #fff;
+          padding: 20px;
+          border-radius: 15px;
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-box {
+          position: relative;
+        }
+
+        .search-box input {
+          padding-right: 40px;
+          border-radius: 10px;
+          border: 1px solid #ddd;
+          height: 50px;
+        }
+
+        .search-box i {
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: #666;
+        }
+
+        .filter-box select {
+          height: 50px;
+          border-radius: 10px;
+          border: 1px solid #ddd;
+        }
+
+        .blog-card {
+          background: #fff;
+          border-radius: 15px;
+          overflow: hidden;
+          transition: all 0.3s ease;
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+          height: 100%;
+        }
+
+        .blog-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-card .post-img {
+          position: relative;
+          overflow: hidden;
+          height: 250px;
+        }
+
+        .blog-card .post-img img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover .post-img img {
+          transform: scale(1.05);
+        }
+
+        .blog-card .post-category {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          background: rgba(227, 28, 37, 0.9);
+          color: #fff;
+          padding: 5px 15px;
+          border-radius: 50px;
+          font-size: 0.8rem;
+          font-weight: 500;
+        }
+
+        .blog-card .card-body {
+          padding: 1.5rem;
+        }
+
+        .blog-card .title {
+          font-size: 1.25rem;
+          margin-bottom: 1rem;
+          line-height: 1.4;
+        }
+
+        .blog-card .title a {
+          color: #333;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+
+        .blog-card .title a:hover {
+          color: #e31c25;
+        }
+
+        .blog-card .post-meta {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-top: 1rem;
+          padding-top: 1rem;
+          border-top: 1px solid #eee;
+        }
+
+        .blog-card .post-author-img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .blog-card .post-author {
+          font-weight: 500;
+          margin-bottom: 0;
+          color: #333;
+        }
+
+        .blog-card .post-date {
+          color: #666;
+          font-size: 0.9rem;
+          margin-bottom: 0;
+        }
+
+        .pagination {
+          margin-top: 2rem;
+        }
+
+        .pagination .page-item .page-link {
+          border: none;
+          padding: 0.5rem 1rem;
+          margin: 0 0.25rem;
+          border-radius: 10px;
+          color: #333;
+          transition: all 0.3s ease;
+        }
+
+        .pagination .page-item.active .page-link {
+          background: #e31c25;
+          color: #fff;
+        }
+
+        .pagination .page-item .page-link:hover {
+          background: #f8f9fa;
+          color: #e31c25;
+        }
+
+        @media (max-width: 768px) {
+          .filter-box {
+            flex-direction: column;
+          }
+          
+          .filter-box select {
+            width: 100%;
+          }
+        }
+      </style>
 
       <script>
         let currentPage = 1;
-        const postsPerPage = 6; // Number of posts to display per page
-        let blogPosts = []; // Initialize as empty, will be populated from JSON
-        let totalPosts = 0;
+        const postsPerPage = 6;
+        let blogPosts = [];
+        let filteredPosts = [];
         let totalPages = 0;
 
         async function fetchBlogPosts() {
           try {
             const response = await fetch("data/blog.json");
+            if (!response.ok) {
+              throw new Error("Failed to fetch blog posts");
+            }
             blogPosts = await response.json();
-            totalPosts = blogPosts.length;
-            totalPages = Math.ceil(totalPosts / postsPerPage);
-            changePage(1); // Load the first page after fetching
+            filteredPosts = [...blogPosts];
+            updatePagination();
+            renderBlogPosts();
           } catch (error) {
-            console.error("Error fetching blog posts:", error);
+            console.error("Error:", error);
+            document.getElementById("blog-grid").innerHTML = `
+              <div class="col-12">
+                <div class="alert alert-danger">
+                  <p>${error.message}</p>
+                  <p>Please try again later or contact support if the problem persists.</p>
+                </div>
+              </div>
+            `;
           }
-        }
-
-        function changePage(page) {
-          // Determine next or previous page action
-          if (page === "next") {
-            if (currentPage < totalPages) {
-              currentPage++;
-            }
-          } else if (page === "prev") {
-            if (currentPage > 1) {
-              currentPage--;
-            }
-          } else {
-            currentPage = page;
-          }
-
-          renderBlogPosts();
-          renderPagination();
         }
 
         function renderBlogPosts() {
-          const postsContainer = document.querySelector(
-            "#blog-posts .container .row"
-          );
-          postsContainer.innerHTML = ""; // Clear current posts
-
           const start = (currentPage - 1) * postsPerPage;
           const end = start + postsPerPage;
-
-          const visiblePosts = blogPosts.slice(start, end);
-          visiblePosts.forEach((post) => {
-            const postElement = document.createElement("div");
-            postElement.classList.add("col-lg-4");
-            postElement.innerHTML = `
-      <article>
-        <div class="post-img">
-          <img src="${post.image}" alt="" class="img-fluid">
-        </div>
-        <p class="post-category">${post.category}</p>
-        <h2 class="title">
-          <a href="blog-details.html?title=${encodeURIComponent(post.title)}">${
-              post.title
-            }</a>
-        </h2>
-        <div class="d-flex align-items-center">
-          <img src="${post.author_image}" alt="" class="img-fluid post-author-img flex-shrink-0">
-          <div class="post-meta">
-            <p class="post-author">${post.author}</p>
-            <p class="post-date">
-              <time datetime="${post.date}">${post.date}</time>
-            </p>
-          </div>
-        </div>
-      </article>
-    `;
-            postsContainer.appendChild(postElement);
-          });
+          const postsToShow = filteredPosts.slice(start, end);
+          const blogGrid = document.getElementById("blog-grid");
+          
+          blogGrid.innerHTML = postsToShow.map(post => `
+            <div class="col-lg-4 col-md-6">
+              <div class="blog-card">
+                <div class="post-img">
+                  <img src="${post.image}" alt="${post.title}">
+                  <span class="post-category">${post.category}</span>
+                </div>
+                <div class="card-body">
+                  <h2 class="title">
+                    <a href="blog-details.html?title=${encodeURIComponent(post.title)}">${post.title}</a>
+                  </h2>
+                  <p class="card-text">${post.excerpt || (post.description || '').substring(0, 150)}...</p>
+                  <div class="post-meta">
+                    <img src="${post.author_image}" alt="${post.author}" class="post-author-img">
+                    <div>
+                      <p class="post-author">${post.author}</p>
+                      <p class="post-date">
+                        <time datetime="${post.date}">${post.date}</time>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `).join('');
         }
 
-        function renderPagination() {
+        function updatePagination() {
+          totalPages = Math.ceil(filteredPosts.length / postsPerPage);
           const paginationList = document.getElementById("pagination-list");
-          paginationList.innerHTML = ""; // Clear existing pagination
-
-          // Add previous button
-          const prevButton = document.createElement("li");
-          prevButton.innerHTML = `<a href="javascript:void(0)" onclick="changePage('prev')"><i class="bi bi-chevron-left"></i></a>`;
-          paginationList.appendChild(prevButton);
-
-          // Add page numbers
-          for (let i = 1; i <= totalPages; i++) {
-            const pageItem = document.createElement("li");
-            pageItem.innerHTML = `<a href="javascript:void(0)" onclick="changePage(${i})">${i}</a>`;
-            if (i === currentPage) {
-              pageItem.querySelector("a").classList.add("active");
-            }
-            paginationList.appendChild(pageItem);
-          }
-
-          // Add next button
-          const nextButton = document.createElement("li");
-          nextButton.innerHTML = `<a href="javascript:void(0)" onclick="changePage('next')"><i class="bi bi-chevron-right"></i></a>`;
-          paginationList.appendChild(nextButton);
+          paginationList.innerHTML = `
+            <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+              <a class="page-link" href="javascript:void(0)" onclick="changePage('prev')">
+                <i class="bi bi-chevron-left"></i>
+              </a>
+            </li>
+            ${Array.from({length: totalPages}, (_, i) => i + 1).map(page => `
+              <li class="page-item ${currentPage === page ? 'active' : ''}">
+                <a class="page-link" href="javascript:void(0)" onclick="changePage(${page})">${page}</a>
+              </li>
+            `).join('')}
+            <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+              <a class="page-link" href="javascript:void(0)" onclick="changePage('next')">
+                <i class="bi bi-chevron-right"></i>
+              </a>
+            </li>
+          `;
         }
 
-        fetchBlogPosts(); // Initial fetch and render
+        function changePage(page) {
+          if (page === 'next' && currentPage < totalPages) {
+            currentPage++;
+          } else if (page === 'prev' && currentPage > 1) {
+            currentPage--;
+          } else if (typeof page === 'number') {
+            currentPage = page;
+          }
+          renderBlogPosts();
+          updatePagination();
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+          const searchTerm = e.target.value.toLowerCase();
+          filteredPosts = blogPosts.filter(post => 
+            post.title.toLowerCase().includes(searchTerm) ||
+            post.description.toLowerCase().includes(searchTerm) ||
+            post.category.toLowerCase().includes(searchTerm)
+          );
+          currentPage = 1;
+          updatePagination();
+          renderBlogPosts();
+        });
+
+        // Category filter
+        document.getElementById('categoryFilter').addEventListener('change', (e) => {
+          const category = e.target.value;
+          filteredPosts = blogPosts.filter(post => 
+            !category || post.category.toLowerCase() === category.toLowerCase()
+          );
+          currentPage = 1;
+          updatePagination();
+          renderBlogPosts();
+        });
+
+        // Date filter
+        document.getElementById('dateFilter').addEventListener('change', (e) => {
+          const dateFilter = e.target.value;
+          const now = new Date();
+          filteredPosts = blogPosts.filter(post => {
+            const postDate = new Date(post.date);
+            if (!dateFilter) return true;
+            
+            const diffTime = Math.abs(now - postDate);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            
+            switch(dateFilter) {
+              case 'week': return diffDays <= 7;
+              case 'month': return diffDays <= 30;
+              case 'year': return diffDays <= 365;
+              default: return true;
+            }
+          });
+          currentPage = 1;
+          updatePagination();
+          renderBlogPosts();
+        });
+
+        // Initial load
+        fetchBlogPosts();
       </script>
-      <!-- /Blog Pagination Section -->
     </main>
 
     <footer id="footer" class="footer dark-background">
@@ -263,7 +475,7 @@
           <div class="col-lg-2 col-md-3 footer-links">
             <h4>More Links</h4>
             <ul>
-              <li><a href="#">Equipments Rental</a></li>
+              <li><a href="rental.html">Equipments Rental</a></li>
               <li><a href="blog.html">Blog</a></li>
               <li><a href="privacy-policy.html">Privacy Policy</a></li>
               <li><a href="terms-of-service.html">Terms of Service</a></li>

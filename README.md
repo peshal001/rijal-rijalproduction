@@ -8,18 +8,33 @@ The project consists of the following main components:
 
 ### HTML Pages
 
+#### Main Pages
+
 - `index.html` - Main homepage
 - `about.html` - About page
 - `contact.html` - Contact information
-- `blog.html` - Blog listing page
-- `blog-details.html` - Individual blog post page
 - `gallery.html` - Photo/video gallery
 - `Behind_the_scenes.html` - Behind the scenes content
-- `careers.html` - Career opportunities
-- `events.html` - Events listing
-- `portfolio-details.html` - Portfolio showcase
+
+#### Blog & News
+
+- `blog.html` - Blog listing page
+- `blog-details.html` - Individual blog post page
+- `press-news.html` - Press and news listing
+- `press-news-details.html` - Individual press/news article
+
+#### Services & Portfolio
+
 - `service-details.html` - Detailed service information
-- `starter-page.html` - Starter template page
+- `portfolio-details.html` - Portfolio showcase
+- `rental.html` - Equipment rental services
+- `rental-details.html` - Detailed rental information
+
+#### Additional Pages
+
+- `careers.html` - Career opportunities
+- `privacy-policy.html` - Privacy policy
+- `terms-of-service.html` - Terms of service
 
 ### Assets
 
@@ -30,6 +45,14 @@ The project includes an `assets/` directory containing:
 - JavaScript files
 - Other media files
 
+### Data
+
+The project includes a `data/` directory for storing:
+
+- JSON data
+- Configuration files
+- Other data resources
+
 ## Getting Started
 
 1. Clone the repository
@@ -38,15 +61,18 @@ The project includes an `assets/` directory containing:
 
 ## Features
 
-- Responsive design
-- Multiple page layouts
-- Blog system
+- Responsive design for all devices
+- Multiple page layouts and templates
+- Blog and news system
 - Portfolio showcase
-- Gallery display
+- Gallery display with media
 - Contact forms
 - Career opportunities section
-- Events management
+- Equipment rental services
+- Press and news section
 - Behind the scenes content
+- Privacy policy and terms of service
+- Comprehensive service details
 
 ## Browser Support
 
@@ -64,6 +90,7 @@ To modify the website:
 1. Edit the HTML files for content changes
 2. Modify CSS in the assets directory for styling
 3. Update JavaScript files for functionality changes
+4. Update data files in the data directory as needed
 
 ## Contributing
 

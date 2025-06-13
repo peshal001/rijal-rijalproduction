@@ -50,17 +50,17 @@
                 <li><a href="Behind_the_scenes.html">Behind the scenes</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#team">Team</a></li>
               </ul>
             </li>
-            <li><a href="index.html#team">Team</a></li>
-            <li><a href="blog.html" class="active">Blog</a></li>
             <li class="dropdown"><a href="#"><span>News & Updates</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
-                <li><a href="events.html">Events</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
                 <li><a href="careers.html">Careers</a></li>
                 <li><a href="index.html#faq">FAQ</a></li>
               </ul>
             </li>
+            <li><a href="rental.html">Rental</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -89,203 +89,136 @@
           <div class="col-lg-8">
             <!-- Blog Details Section -->
             <section id="blog-details" class="blog-details section">
-              <div class="container">
-                <article class="article">
-                  <div class="post-img">
-                    <img
-                      src="assets/img/blog/blog-1.jpg"
-                      alt=""
-                      class="img-fluid"
-                    />
+              <div class="blog-details-content">
+                <!-- Featured Image -->
+                <div class="featured-image mb-4">
+                  <img id="blog-image" src="" alt="" class="img-fluid rounded">
+                </div>
+
+                <!-- Blog Header -->
+                <div class="blog-header mb-4">
+                  <div class="category-badge mb-3">
+                    <span id="blog-category" class="badge"></span>
                   </div>
-
-                  <h2 class="title" id="blog-title">Loading...</h2>
-
-                  <div class="meta-top">
-                    <ul>
-                      <li class="d-flex align-items-center">
-                        <i class="bi bi-person"></i>
-                        <a href="#" id="blog-author"></a>
-                      </li>
-                      <li class="d-flex align-items-center">
-                        <i class="bi bi-clock"></i>
-                        <a href="#"><time id="blog-date" datetime=""></time></a>
-                      </li>
-                    </ul>
+                  <h1 id="blog-title" class="mb-3"></h1>
+                  <div class="blog-meta d-flex align-items-center gap-4">
+                    <div class="author d-flex align-items-center">
+                      <img id="author-image" src="" alt="" class="rounded-circle me-2">
+                      <div>
+                        <p class="author-name mb-0" id="blog-author"></p>
+                        <p class="post-date mb-0" id="blog-date"></p>
+                      </div>
+                    </div>
+                    <div class="reading-time">
+                      <i class="bi bi-clock"></i>
+                      <span id="reading-time">5 min read</span>
+                    </div>
                   </div>
-                  <!-- End meta top -->
+                </div>
 
-                  <div class="content">
-                    <p id="blog-content"></p>
+                <!-- Blog Content -->
+                <div class="blog-content mb-4">
+                  <div id="blog-content"></div>
+                </div>
+
+                <!-- Tags -->
+                <div class="blog-tags mb-4">
+                  <h5>Tags:</h5>
+                  <div id="blog-tags" class="d-flex flex-wrap gap-2"></div>
+                </div>
+
+                <!-- Social Share -->
+                <div class="social-share mb-4">
+                  <h5>Share this post:</h5>
+                  <div class="share-buttons d-flex gap-2">
+                    <a href="#" class="btn btn-facebook" onclick="shareOnFacebook()">
+                      <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" class="btn btn-twitter" onclick="shareOnTwitter()">
+                      <i class="bi bi-twitter-x"></i>
+                    </a>
+                    <a href="#" class="btn btn-linkedin" onclick="shareOnLinkedIn()">
+                      <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" class="btn btn-whatsapp" onclick="shareOnWhatsApp()">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
                   </div>
-                  <!-- End post content -->
+                </div>
 
-                  <div class="meta-bottom">
-                    <i class="bi bi-folder"></i>
-                    <ul class="cats">
-                      <li><a href="#" id="blog-category"></a></li>
-                    </ul>
-
-                    <i class="bi bi-tags"></i>
-                    <ul class="tags" id="blog-tags">
-                      <li><a href="#">Film</a></li>
-                      <li><a href="#">Nepal</a></li>
-                      <li><a href="#">Cinema</a></li>
-                    </ul>
+                <!-- Author Bio -->
+                <div class="author-bio mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex align-items-center">
+                        <img id="author-bio-image" src="" alt="" class="rounded-circle me-3">
+                        <div>
+                          <h5 id="author-bio-name"></h5>
+                          <p id="author-bio-text" class="mb-0"></p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <!-- End meta bottom -->
-                </article>
+                </div>
               </div>
             </section>
-            <!-- /Blog Details Section -->
           </div>
 
-          <div class="col-lg-4 sidebar">
-            <div class="widgets-container">
-              <!-- Blog Author Widget -->
-              <!-- <div class="blog-author-widget widget-item">
-                <div class="d-flex flex-column align-items-center">
-                  <img
-                    src="assets/img/blog/blog-author.jpg"
-                    class="rounded-circle flex-shrink-0"
-                    alt=""
-                  />
-                  <h4>Jane Smith</h4>
-                  <div class="social-links">
-                    <a href="https://x.com/#"
-                      ><i class="bi bi-twitter-x"></i
-                    ></a>
-                    <a href="https://facebook.com/#"
-                      ><i class="bi bi-facebook"></i
-                    ></a>
-                    <a href="https://instagram.com/#"
-                      ><i class="biu bi-instagram"></i
-                    ></a>
-                    <a href="https://instagram.com/#"
-                      ><i class="biu bi-linkedin"></i
-                    ></a>
-                  </div>
-
-                  <p>
-                    Itaque quidem optio quia voluptatibus dolorem dolor. Modi
-                    eum sed possimus accusantium. Quas repellat voluptatem
-                    officia numquam sint aspernatur voluptas. Esse et
-                    accusantium ut unde voluptas.
-                  </p>
-                </div>
-              </div> -->
-              <!--/Blog Author Widget -->
-
+          <div class="col-lg-4">
+            <!-- Sidebar -->
+            <div class="blog-sidebar">
               <!-- Search Widget -->
-              <div class="search-widget widget-item">
-                <h3 class="widget-title">Search</h3>
-                <form action="">
-                  <input type="text" />
-                  <button type="submit" title="Search">
-                    <i class="bi bi-search"></i>
-                  </button>
-                </form>
+              <div class="widget search-widget mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="widget-title">Search</h5>
+                    <form class="search-form">
+                      <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search posts...">
+                        <button class="btn btn-primary" type="submit">
+                          <i class="bi bi-search"></i>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
               </div>
-              <!--/Search Widget -->
 
               <!-- Categories Widget -->
-              <div class="categories-widget widget-item">
-                <h3 class="widget-title">Categories</h3>
-                <ul class="mt-3">
-                  <li>
-                    <a href="#">General <span>(25)</span></a>
-                  </li>
-                  <li>
-                    <a href="#">Lifestyle <span>(12)</span></a>
-                  </li>
-                  <li>
-                    <a href="#">Travel <span>(5)</span></a>
-                  </li>
-                  <li>
-                    <a href="#">Design <span>(22)</span></a>
-                  </li>
-                  <li>
-                    <a href="#">Creative <span>(8)</span></a>
-                  </li>
-                  <li>
-                    <a href="#">Educaion <span>(14)</span></a>
-                  </li>
-                </ul>
+              <div class="widget categories-widget mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="widget-title">Categories</h5>
+                    <ul class="categories-list" id="categories-list">
+                      <!-- Categories will be populated by JavaScript -->
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <!--/Categories Widget -->
 
               <!-- Recent Posts Widget -->
-              <div class="recent-posts-widget widget-item">
-                <h3 class="widget-title">Recent Posts</h3>
-
-                <div class="post-item">
-                  <h4>
-                    <a href="blog-details.html"
-                      >Nihil blanditiis at in nihil autem</a
-                    >
-                  </h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
+              <div class="widget recent-posts-widget mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="widget-title">Recent Posts</h5>
+                    <div class="recent-posts" id="recent-posts">
+                      <!-- Recent posts will be populated by JavaScript -->
+                    </div>
+                  </div>
                 </div>
-                <!-- End recent post item-->
-
-                <div class="post-item">
-                  <h4>
-                    <a href="blog-details.html">Quidem autem et impedit</a>
-                  </h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-                <!-- End recent post item-->
-
-                <div class="post-item">
-                  <h4>
-                    <a href="blog-details.html"
-                      >Id quia et et ut maxime similique occaecati ut</a
-                    >
-                  </h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-                <!-- End recent post item-->
-
-                <div class="post-item">
-                  <h4>
-                    <a href="blog-details.html"
-                      >Laborum corporis quo dara net para</a
-                    >
-                  </h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-                <!-- End recent post item-->
-
-                <div class="post-item">
-                  <h4>
-                    <a href="blog-details.html"
-                      >Et dolores corrupti quae illo quod dolor</a
-                    >
-                  </h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-                <!-- End recent post item-->
               </div>
-              <!--/Recent Posts Widget -->
 
               <!-- Tags Widget -->
-              <div class="tags-widget widget-item">
-                <h3 class="widget-title">Tags</h3>
-                <ul>
-                  <li><a href="#">App</a></li>
-                  <li><a href="#">IT</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Mac</a></li>
-                  <li><a href="#">Design</a></li>
-                  <li><a href="#">Office</a></li>
-                  <li><a href="#">Creative</a></li>
-                  <li><a href="#">Studio</a></li>
-                  <li><a href="#">Smart</a></li>
-                  <li><a href="#">Tips</a></li>
-                  <li><a href="#">Marketing</a></li>
-                </ul>
+              <div class="widget tags-widget mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="widget-title">Popular Tags</h5>
+                    <div class="tags-cloud" id="tags-cloud">
+                      <!-- Tags will be populated by JavaScript -->
+                    </div>
+                  </div>
+                </div>
               </div>
-              <!--/Tags Widget -->
             </div>
           </div>
         </div>
@@ -322,7 +255,7 @@
           <div class="col-lg-2 col-md-3 footer-links">
             <h4>More Links</h4>
             <ul>
-              <li><a href="#">Equipments Rental</a></li>
+              <li><a href="rental.html">Equipments Rental</a></li>
               <li><a href="blog.html">Blog</a></li>
               <li><a href="privacy-policy.html">Privacy Policy</a></li>
               <li><a href="terms-of-service.html">Terms of Service</a></li>
@@ -363,33 +296,285 @@
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
 
+    <style>
+      .blog-details-content {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .featured-image {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .featured-image img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+
+      .category-badge .badge {
+        background: #e31c25;
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+        border-radius: 50px;
+      }
+
+      .blog-header h1 {
+        font-size: 2.5rem;
+        line-height: 1.3;
+        color: #333;
+      }
+
+      .blog-meta {
+        color: #666;
+      }
+
+      .blog-meta .author img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+      }
+
+      .blog-meta .author-name {
+        font-weight: 500;
+        color: #333;
+      }
+
+      .blog-meta .post-date {
+        font-size: 0.9rem;
+      }
+
+      .blog-meta .reading-time {
+        font-size: 0.9rem;
+      }
+
+      .blog-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #444;
+      }
+
+      .blog-content p {
+        margin-bottom: 1.5rem;
+      }
+
+      .blog-tags .badge {
+        background: #f8f9fa;
+        color: #666;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .blog-tags .badge:hover {
+        background: #e31c25;
+        color: #fff;
+      }
+
+      .social-share .btn {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: #fff;
+        transition: all 0.3s ease;
+      }
+
+      .social-share .btn-facebook {
+        background: #1877f2;
+      }
+
+      .social-share .btn-twitter {
+        background: #000;
+      }
+
+      .social-share .btn-linkedin {
+        background: #0a66c2;
+      }
+
+      .social-share .btn-whatsapp {
+        background: #25d366;
+      }
+
+      .social-share .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .author-bio .card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .author-bio img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+      }
+
+      .blog-sidebar .card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .blog-sidebar .widget-title {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        color: #333;
+      }
+
+      .search-form .form-control {
+        border-radius: 10px 0 0 10px;
+        border: 1px solid #ddd;
+        height: 50px;
+      }
+
+      .search-form .btn {
+        border-radius: 0 10px 10px 0;
+        padding: 0 1.5rem;
+      }
+
+      .categories-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .categories-list li {
+        margin-bottom: 1rem;
+      }
+
+      .categories-list a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .categories-list a:hover {
+        color: #e31c25;
+      }
+
+      .categories-list span {
+        background: #f8f9fa;
+        padding: 0.25rem 0.75rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+      }
+
+      .recent-posts .post-item {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      .recent-posts .post-item:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .recent-posts .post-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .recent-posts .post-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .recent-posts .post-title {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+      }
+
+      .recent-posts .post-title a {
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .recent-posts .post-title a:hover {
+        color: #e31c25;
+      }
+
+      .recent-posts .post-date {
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      .tags-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tags-cloud .badge {
+        background: #f8f9fa;
+        color: #666;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .tags-cloud .badge:hover {
+        background: #e31c25;
+        color: #fff;
+      }
+
+      @media (max-width: 768px) {
+        .blog-header h1 {
+          font-size: 2rem;
+        }
+
+        .featured-image img {
+          height: 300px;
+        }
+
+        .blog-meta {
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+    </style>
+
     <script>
       document.addEventListener("DOMContentLoaded", async () => {
         try {
-          // Get the title from URL
           const urlParams = new URLSearchParams(window.location.search);
-          const postTitle = urlParams.get("title");
-          console.log("URL Title:", postTitle);
+          const title = urlParams.get("title");
 
-          if (!postTitle) {
-            throw new Error("No blog post title provided in URL");
+          if (!title) {
+            throw new Error("No blog post title provided");
           }
 
-          // Fetch blog data
           const response = await fetch("data/blog.json");
           if (!response.ok) {
             throw new Error("Failed to fetch blog data");
           }
 
-          const blogPosts = await response.json();
-          console.log("Fetched blog posts:", blogPosts);
-
-          // Decode and find the matching post
-          const decodedPostTitle = decodeURIComponent(postTitle);
-          console.log("Decoded title:", decodedPostTitle);
-
-          const post = blogPosts.find((p) => p.title === decodedPostTitle);
-          console.log("Found post:", post);
+          const posts = await response.json();
+          const post = posts.find((p) => p.title === title);
 
           if (!post) {
             throw new Error("Blog post not found");
@@ -398,138 +583,123 @@
           // Update page title
           document.title = `${post.title} - R&R Production`;
 
-          // Update blog post details
-          const titleElement = document.getElementById("blog-title");
-          const imageElement = document.querySelector(
-            ".blog-details .post-img img"
-          );
-          const authorElement = document.getElementById("blog-author");
-          const dateElement = document.getElementById("blog-date");
-          const categoryElement = document.getElementById("blog-category");
-          const contentElement = document.getElementById("blog-content");
-          const tagsElement = document.getElementById("blog-tags");
+          // Update main content
+          document.getElementById("blog-image").src = post.image;
+          document.getElementById("blog-image").alt = post.title;
+          document.getElementById("blog-category").textContent = post.category;
+          document.getElementById("blog-title").textContent = post.title;
+          document.getElementById("author-image").src = post.author_image;
+          document.getElementById("author-image").alt = post.author;
+          document.getElementById("blog-author").textContent = post.author;
+          document.getElementById("blog-date").textContent = post.date;
+          document.getElementById("blog-content").innerHTML = post.content;
 
-          // Update title
-          if (titleElement) {
-            titleElement.textContent = post.title;
-            document.getElementById(
-              "blog-details-short-description"
-            ).textContent = post.title;
-
-            console.log("Updated title to:", post.title);
-          }
-
-          // Update image
-          if (imageElement) {
-            imageElement.src = post.image;
-            imageElement.alt = post.title;
-            console.log("Updated image to:", post.image);
-          }
-
-          // Update author
-          if (authorElement) {
-            authorElement.textContent = post.author;
-            authorElement.href = `#author-${post.author
-              .toLowerCase()
-              .replace(/\s+/g, "-")}`;
-            console.log("Updated author to:", post.author);
-          }
-
-          // Update date
-          if (dateElement) {
-            const date = new Date(post.date);
-            dateElement.setAttribute("datetime", post.date);
-            dateElement.textContent = date.toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            });
-            console.log("Updated date to:", post.date);
-          }
-
-          // Update category
-          if (categoryElement) {
-            categoryElement.textContent = post.category;
-            categoryElement.href = `#category-${post.category
-              .toLowerCase()
-              .replace(/\s+/g, "-")}`;
-            console.log("Updated category to:", post.category);
-          }
-
-          // Update content
-          if (contentElement) {
-            contentElement.innerHTML = post.content;
-            console.log("Updated content");
-          }
+          // Calculate reading time (assuming 200 words per minute)
+          const wordCount = post.content.split(/\s+/).length;
+          const readingTime = Math.ceil(wordCount / 200);
+          document.getElementById("reading-time").textContent = `${readingTime} min read`;
 
           // Update tags
-          if (tagsElement) {
-            const tags = [];
-            // Add category as a tag
-            tags.push(post.category);
-
-            // Add additional tags based on category
-            switch (post.category) {
-              case "Nepali Film Industry":
-                tags.push("Film", "Cinema", "Production");
-                break;
-              case "Behind the Scenes":
-                tags.push("Production", "Creative", "Process");
-                break;
-              case "Technology & Innovation":
-                tags.push("Tech", "VFX", "Innovation");
-                break;
-              case "Global Impact":
-                tags.push("International", "Distribution", "Festivals");
-                break;
-              case "Social Impact":
-                tags.push("Inclusion", "Diversity", "Community");
-                break;
-              case "Future & Vision":
-                tags.push("Future", "Development", "Growth");
-                break;
-            }
-
-            // Update tags HTML
-            tagsElement.innerHTML = tags
-              .map(
-                (tag) =>
-                  `<li><a href="#tag-${tag
-                    .toLowerCase()
-                    .replace(/\s+/g, "-")}">${tag}</a></li>`
-              )
-              .join("");
-            console.log("Updated tags");
+          const tagsContainer = document.getElementById("blog-tags");
+          if (post.tags && post.tags.length > 0) {
+            tagsContainer.innerHTML = post.tags.map(tag => `
+              <span class="badge">${tag}</span>
+            `).join('');
           }
 
-          // Update meta description
-          const metaDescription = document.querySelector(
-            'meta[name="description"]'
-          );
-          if (metaDescription && post.content) {
-            metaDescription.content = post.content.substring(0, 160) + "...";
-          }
+          // Update author bio
+          document.getElementById("author-bio-image").src = post.author_image;
+          document.getElementById("author-bio-image").alt = post.author;
+          document.getElementById("author-bio-name").textContent = post.author;
+          document.getElementById("author-bio-text").textContent = post.author_bio || "Film industry professional with extensive experience in production and direction.";
+
+          // Populate categories
+          const categories = [...new Set(posts.map(p => p.category))];
+          const categoriesList = document.getElementById("categories-list");
+          categoriesList.innerHTML = categories.map(category => `
+            <li>
+              <a href="javascript:void(0)" onclick="filterByCategory('${category}')">
+                ${category}
+                <span>${posts.filter(p => p.category === category).length}</span>
+              </a>
+            </li>
+          `).join('');
+
+          // Populate recent posts
+          const recentPosts = posts
+            .filter(p => p.title !== post.title)
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+            .slice(0, 3);
+          
+          const recentPostsContainer = document.getElementById("recent-posts");
+          recentPostsContainer.innerHTML = recentPosts.map(p => `
+            <div class="post-item">
+              <div class="post-img">
+                <img src="${p.image}" alt="${p.title}">
+              </div>
+              <div>
+                <h6 class="post-title">
+                  <a href="blog-details.html?title=${encodeURIComponent(p.title)}">${p.title}</a>
+                </h6>
+                <p class="post-date">${p.date}</p>
+              </div>
+            </div>
+          `).join('');
+
+          // Populate tags cloud
+          const allTags = posts.flatMap(p => p.tags || []);
+          const tagCounts = allTags.reduce((acc, tag) => {
+            acc[tag] = (acc[tag] || 0) + 1;
+            return acc;
+          }, {});
+
+          const tagsCloud = document.getElementById("tags-cloud");
+          tagsCloud.innerHTML = Object.entries(tagCounts)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10)
+            .map(([tag, count]) => `
+              <span class="badge">${tag}</span>
+            `).join('');
+
         } catch (error) {
           console.error("Error:", error);
-
-          // Update UI to show error state
-          const titleElement = document.getElementById("blog-title");
-          const contentElement = document.getElementById("blog-content");
-
-          if (titleElement) {
-            titleElement.textContent = "Error Loading Blog Post";
-          }
-
-          if (contentElement) {
-            contentElement.innerHTML = `
-              <div class="alert alert-danger">
-                <p>${error.message}</p>
-                <p>Please try again later or contact support if the problem persists.</p>
-              </div>
-            `;
-          }
+          const mainContent = document.querySelector(".blog-details-content");
+          mainContent.innerHTML = `
+            <div class="alert alert-danger">
+              <p>${error.message}</p>
+              <p>Please try again later or contact support if the problem persists.</p>
+            </div>
+          `;
         }
       });
+
+      // Social sharing functions
+      function shareOnFacebook() {
+        const url = encodeURIComponent(window.location.href);
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+      }
+
+      function shareOnTwitter() {
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent(document.getElementById("blog-title").textContent);
+        window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank');
+      }
+
+      function shareOnLinkedIn() {
+        const url = encodeURIComponent(window.location.href);
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+      }
+
+      function shareOnWhatsApp() {
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent(document.getElementById("blog-title").textContent);
+        window.open(`https://wa.me/?text=${title}%20${url}`, '_blank');
+      }
+
+      // Category filter function
+      function filterByCategory(category) {
+        window.location.href = `blog.html?category=${encodeURIComponent(category)}`;
+      }
     </script>
   </body>
 </html>
