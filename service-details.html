@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="shortcut icon" type="x-icon" href="assets\img\movie logo.png">
+  <link rel="shortcut icon" type="image/png" href="assets/img/logo32x32.png">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Service-Details - R&R Production</title>
   <meta name="description" content="">
@@ -38,19 +38,20 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets\img\movie logo.png" alt="" style="height: 60px; width: auto;">
+        <img src="assets\img\movie logo.png" alt="" style="height: 120px; width: auto;">
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="index.html#services">Services</a></li>
           <li class="dropdown"><a href="#"><span>Portfolio</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="index.html#portfolio">Films & Projects</a></li>
               <li><a href="Behind_the_scenes.html">Behind the scenes</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="index.html#testimonials">Testimonials</a></li>
             </ul>
           </li>
           <li><a href="index.html#team">Team</a></li>
@@ -59,17 +60,6 @@
                 class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="events.html">Events</a></li>
-              <li class="dropdown"><a href="#"><span>Award & Recognization</span> <i
-                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="gallery.html">Gallery</a></li>
               <li><a href="careers.html">Careers</a></li>
               <li><a href="index.html#faq">FAQ</a></li>
             </ul>
@@ -87,7 +77,7 @@
     <!-- Page Title -->
     <div class="page-title dark-background">
       <div class="container position-relative">
-        <h1>Service Details</h1>
+        <h1 id="service-page-title">Service Details</h1>
         <p id="service-page-description">
           Select a service from the list to see detailed information about what we offer, from production to
           post-production, scriptwriting to editing.
@@ -95,7 +85,7 @@
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li class="current">Service Details</li>
+            <li class="current" id="breadcrumb-current-service">Service Details</li>
           </ol>
         </nav>
       </div>
@@ -109,15 +99,8 @@
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="service-box">
               <h4>Services List</h4>
-              <div class="services-list">
-                <a href="#" class="service-item active" data-service="film-production"><i
-                    class="bi bi-arrow-right-circle"></i><span>Film Production</span></a>
-                <a href="#" class="service-item" data-service="script-writing"><i
-                    class="bi bi-arrow-right-circle"></i><span>Script Writing</span></a>
-                <a href="#" class="service-item" data-service="video-editing"><i
-                    class="bi bi-arrow-right-circle"></i><span>Video Editing</span></a>
-                <a href="#" class="service-item" data-service="post-production"><i
-                    class="bi bi-arrow-right-circle"></i><span>Post Production</span></a>
+              <div class="services-list" id="dynamic-services-list">
+                <!-- Services will be dynamically loaded here -->
               </div>
             </div><!-- End Services List -->
             <div class="service-box">
@@ -150,73 +133,87 @@
     </section>
 
     <script>
-      // Service details data for various services
-      const servicesData = {
-        'film-production': {
-          title: 'Film Production',
-          description: 'Our film production services include all stages from pre-production to shooting and post-production.',
-          list: ['Pre-production planning', 'Film shooting and direction', 'Editing and sound design'],
-          image: 'assets/img/services.jpg'
-        },
-        'script-writing': {
-          title: 'Script Writing',
-          description: 'We offer professional script writing for films, commercials, and digital content.',
-          list: ['Creative writing', 'Script structure and formatting', 'Dialogue writing'],
-          image: 'assets/img/working-1.jpg'
-        },
-        'video-editing': {
-          title: 'Video Editing',
-          description: 'Professional video editing services for a range of content including films, documentaries, and advertisements.',
-          list: ['Video cutting and trimming', 'Color grading', 'Sound synchronization'],
-          image: 'assets/img/videoediting.jpg'
-        },
-        'post-production': {
-          title: 'Post Production',
-          description: 'Complete post-production services to finalize your content, including visual effects, sound design, and final editing.',
-          list: ['Visual effects', 'Sound design', 'Final editing and color correction'],
-          image: 'assets/img/PostProduction.png'
-        }
-      };
+      let allServices = []; // Store all services from JSON
 
-      // Function to update the service details dynamically
-      function updateServiceDetails(serviceKey) {
-        const service = servicesData[serviceKey];
-        if (service) {
-          document.getElementById('service-title').textContent = service.title;
-          document.getElementById('service-description').textContent = service.description;
-          document.getElementById('service-image').src = service.image;
+      async function fetchServices() {
+        try {
+          const response = await fetch('data/services.json');
+          allServices = await response.json();
+          renderServiceList();
+          displayServiceFromUrl();
+        } catch (error) {
+          console.error('Error fetching services:', error);
+        }
+      }
+
+      function renderServiceList() {
+        const servicesListContainer = document.getElementById('dynamic-services-list');
+        servicesListContainer.innerHTML = ''; // Clear existing list
+
+        allServices.forEach(service => {
+          const serviceLink = document.createElement('a');
+          serviceLink.href = `service-details.html?id=${service.id}`;
+          serviceLink.classList.add('service-item');
+          serviceLink.setAttribute('data-service', service.id);
+          serviceLink.innerHTML = `<i class="bi bi-arrow-right-circle"></i><span>${service.title}</span>`;
+          servicesListContainer.appendChild(serviceLink);
+        });
+      }
+
+      function displayServiceFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceId = urlParams.get('id');
+
+        let serviceToDisplay = allServices.find(service => service.id === serviceId);
+
+        if (!serviceToDisplay && allServices.length > 0) {
+          // Default to the first service if no ID is provided or found
+          serviceToDisplay = allServices[0];
+        }
+
+        if (serviceToDisplay) {
+          document.getElementById('service-page-title').textContent = serviceToDisplay.title;
+          document.getElementById('service-page-description').textContent = serviceToDisplay.description;
+          document.getElementById('breadcrumb-current-service').textContent = serviceToDisplay.title;
+          
+          document.getElementById('service-title').textContent = serviceToDisplay.title;
+          document.getElementById('service-description').textContent = serviceToDisplay.description;
+          document.getElementById('service-image').src = serviceToDisplay.image;
 
           const serviceList = document.getElementById('service-list');
           serviceList.innerHTML = ''; // Clear previous list items
 
-          service.list.forEach(item => {
+          serviceToDisplay.details_list.forEach(item => {
             const li = document.createElement('li');
             li.innerHTML = `<i class="bi bi-check-circle"></i> <span>${item}</span>`;
             serviceList.appendChild(li);
           });
+
+          // Highlight the active service in the list
+          const activeLink = document.querySelector(`.service-item[data-service="${serviceToDisplay.id}"]`);
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
         }
       }
 
-      // Event listener for clicking on services
-      const serviceLinks = document.querySelectorAll('.service-item');
-      serviceLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
+      // Initial fetch and render
+      fetchServices();
+
+      // Add event listener for clicks on dynamically created service items (delegation)
+      document.getElementById('dynamic-services-list').addEventListener('click', (e) => {
+        if (e.target.closest('.service-item')) {
           e.preventDefault();
+          const serviceId = e.target.closest('.service-item').getAttribute('data-service');
+          window.history.pushState(null, '', `service-details.html?id=${serviceId}`);
+          displayServiceFromUrl();
 
-          // Remove active class from all links
-          serviceLinks.forEach(link => link.classList.remove('active'));
-
-          // Add active class to the clicked link
-          link.classList.add('active');
-
-          // Get the service name from data-service attribute
-          const serviceKey = link.getAttribute('data-service');
-          updateServiceDetails(serviceKey);
-        });
+          // Remove active class from all links and add to clicked
+          document.querySelectorAll('#dynamic-services-list .service-item').forEach(link => link.classList.remove('active'));
+          e.target.closest('.service-item').classList.add('active');
+        }
       });
 
-      // Initialize with the first service (Film Production)
-      updateServiceDetails('film-production');
     </script>
 
     <!-- /Service Details Section -->
@@ -264,7 +261,7 @@
           <h4>Contact Us</h4>
           <p>Email: info@rrproduction.com</p>
           <p>Phone: +977 9876543210</p>
-          <p>Address: Kamalarga,<br>KamalPokhari,Kathmandu, Nepal</p>
+          <p>Address: Kamalmarga<br>KamalPokhari,Kathmandu, Nepal</p>
         </div>
       </div>
     </div>

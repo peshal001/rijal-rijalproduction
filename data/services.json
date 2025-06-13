@@ -1,0 +1,80 @@
+[
+  {
+    "id": "film-production",
+    "title": "Film Production",
+    "description": "From concept to completion, we handle every aspect of film production to bring your vision to life with professional expertise. Our services include all stages from pre-production to shooting and post-production.",
+    "icon": "bi-camera-video",
+    "color": "#0dcaf0",
+    "details_list": [
+      "Pre-production planning",
+      "Film shooting and direction",
+      "Editing and sound design"
+    ],
+    "image": "assets/img/services.jpg"
+  },
+  {
+    "id": "script-writing",
+    "title": "Script Writing",
+    "description": "Collaborate with our team to craft compelling scripts that captivate audiences and drive your story forward. We offer professional script writing for films, commercials, and digital content.",
+    "icon": "bi-pencil-square",
+    "color": "#fd7e14",
+    "details_list": [
+      "Creative writing and concept development",
+      "Script structure and formatting",
+      "Dialogue writing and character development"
+    ],
+    "image": "assets/img/working-1.jpg"
+  },
+  {
+    "id": "video-editing",
+    "title": "Video Editing",
+    "description": "Transform raw footage into polished cinematic works with our state-of-the-art editing techniques and tools. Professional video editing services for a range of content including films, documentaries, and advertisements.",
+    "icon": "bi-scissors",
+    "color": "#20c997",
+    "details_list": [
+      "Video cutting and trimming",
+      "Color grading and correction",
+      "Sound synchronization and mixing"
+    ],
+    "image": "assets/img/videoediting.jpg"
+  },
+  {
+    "id": "film-promotion",
+    "title": "Film Promotion",
+    "description": "Boost your film's reach with our tailored marketing and promotional strategies that resonate with your target audience. We provide comprehensive solutions to get your film seen.",
+    "icon": "bi-megaphone",
+    "color": "#df1529",
+    "details_list": [
+      "Marketing strategy development",
+      "Digital campaign management",
+      "Press and media relations"
+    ],
+    "image": "assets/img/film-promotion.jpg"
+  },
+  {
+    "id": "talent-sourcing",
+    "title": "Talent Sourcing",
+    "description": "Connect with talented actors, writers, and crew to bring the best skills to your production project. Our extensive network ensures you find the perfect match for your vision.",
+    "icon": "bi-people",
+    "color": "#6610f2",
+    "details_list": [
+      "Casting calls and auditions",
+      "Crew recruitment and management",
+      "Talent negotiation and contracts"
+    ],
+    "image": "assets/img/talent-sourcing.jpg"
+  },
+  {
+    "id": "sound-design",
+    "title": "Sound Design",
+    "description": "Elevate your film's audio experience with expert sound design, mixing, and scoring to enhance every scene. We create immersive audio landscapes that bring stories to life.",
+    "icon": "bi-music-note",
+    "color": "#f3268c",
+    "details_list": [
+      "Original score composition",
+      "Sound effects and foley",
+      "Audio mixing and mastering"
+    ],
+    "image": "assets/img/sound-design.jpg"
+  }
+] 

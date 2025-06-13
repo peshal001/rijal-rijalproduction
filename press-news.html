@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="shortcut icon" type="image/png" href="assets/img/logo32x32.png" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Blog - R&R Production</title>
+    <title>Press & News - R&R Production</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
@@ -32,7 +32,7 @@
     <link href="assets/css/main.css" rel="stylesheet" />
   </head>
 
-  <body class="blog-page">
+  <body class="press-news-page">
     <header id="header" class="header d-flex align-items-center fixed-top">
       <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
@@ -53,7 +53,7 @@
               </ul>
             </li>
             <li><a href="index.html#team">Team</a></li>
-            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li class="dropdown"><a href="#"><span>News & Updates</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
                 <li><a href="events.html">Events</a></li>
@@ -72,165 +72,68 @@
       <!-- Page Title -->
       <div class="page-title dark-background">
         <div class="container position-relative">
-          <h1>Film Industry Blog</h1>
-          <p>
-            Explore the latest trends, news, and discussions about the world of
-            cinema, filmmaking, actors, and the entertainment industry.
-          </p>
+          <h1>Press & News</h1>
+          <p>Latest updates and announcements from R&R Production</p>
           <nav class="breadcrumbs">
             <ol>
               <li><a href="index.html">Home</a></li>
-              <li class="current">Blog</li>
+              <li class="current">Press & News</li>
             </ol>
           </nav>
         </div>
       </div>
-      <!-- End Page Title -->
 
-      <!-- Blog Posts Section -->
-      <section id="blog-posts" class="blog-posts section">
+      <!-- Press & News Section -->
+      <section id="press-news" class="press-news section">
         <div class="container">
-          <div class="row gy-4">
-            <!-- Blog posts will be dynamically loaded here by JavaScript -->
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="row gy-4" id="press-news-cards">
+                <!-- Cards will be populated by JavaScript -->
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="sidebar">
+                <!-- Categories Widget -->
+                <div class="widget-item">
+                  <h3 class="widget-title">Categories</h3>
+                  <ul class="categories-list">
+                    <li>
+                      <a
+                        href="#"
+                        class="category-link active"
+                        data-category="all"
+                        >All</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="category-link"
+                        data-category="Press Release"
+                        >Press Releases</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="category-link" data-category="News"
+                        >News</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Recent Posts Widget -->
+                <div class="widget-item">
+                  <h3 class="widget-title">Recent Posts</h3>
+                  <div id="recent-posts">
+                    <!-- Recent posts will be populated by JavaScript -->
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      <!-- /Blog Posts Section -->
-
-      <!-- Blog Pagination Section -->
-      <section id="blog-pagination" class="blog-pagination section">
-        <div class="container">
-          <div class="d-flex justify-content-center">
-            <ul id="pagination-list">
-              <li>
-                <a href="javascript:void(0)" onclick="changePage('prev')"
-                  ><i class="bi bi-chevron-left"></i
-                ></a>
-              </li>
-              <!-- Page numbers will be inserted dynamically here -->
-              <li>
-                <a href="javascript:void(0)" onclick="changePage(1)">1</a>
-              </li>
-              <li>
-                <a href="javascript:void(0)" onclick="changePage(2)">2</a>
-              </li>
-              <li>
-                <a href="javascript:void(0)" onclick="changePage(3)">3</a>
-              </li>
-              <li>
-                <a href="javascript:void(0)" onclick="changePage('next')"
-                  ><i class="bi bi-chevron-right"></i
-                ></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <script>
-        let currentPage = 1;
-        const postsPerPage = 6; // Number of posts to display per page
-        let blogPosts = []; // Initialize as empty, will be populated from JSON
-        let totalPosts = 0;
-        let totalPages = 0;
-
-        async function fetchBlogPosts() {
-          try {
-            const response = await fetch("data/blog.json");
-            blogPosts = await response.json();
-            totalPosts = blogPosts.length;
-            totalPages = Math.ceil(totalPosts / postsPerPage);
-            changePage(1); // Load the first page after fetching
-          } catch (error) {
-            console.error("Error fetching blog posts:", error);
-          }
-        }
-
-        function changePage(page) {
-          // Determine next or previous page action
-          if (page === "next") {
-            if (currentPage < totalPages) {
-              currentPage++;
-            }
-          } else if (page === "prev") {
-            if (currentPage > 1) {
-              currentPage--;
-            }
-          } else {
-            currentPage = page;
-          }
-
-          renderBlogPosts();
-          renderPagination();
-        }
-
-        function renderBlogPosts() {
-          const postsContainer = document.querySelector(
-            "#blog-posts .container .row"
-          );
-          postsContainer.innerHTML = ""; // Clear current posts
-
-          const start = (currentPage - 1) * postsPerPage;
-          const end = start + postsPerPage;
-
-          const visiblePosts = blogPosts.slice(start, end);
-          visiblePosts.forEach((post) => {
-            const postElement = document.createElement("div");
-            postElement.classList.add("col-lg-4");
-            postElement.innerHTML = `
-      <article>
-        <div class="post-img">
-          <img src="${post.image}" alt="" class="img-fluid">
-        </div>
-        <p class="post-category">${post.category}</p>
-        <h2 class="title">
-          <a href="blog-details.html?title=${encodeURIComponent(post.title)}">${
-              post.title
-            }</a>
-        </h2>
-        <div class="d-flex align-items-center">
-          <img src="${post.author_image}" alt="" class="img-fluid post-author-img flex-shrink-0">
-          <div class="post-meta">
-            <p class="post-author">${post.author}</p>
-            <p class="post-date">
-              <time datetime="${post.date}">${post.date}</time>
-            </p>
-          </div>
-        </div>
-      </article>
-    `;
-            postsContainer.appendChild(postElement);
-          });
-        }
-
-        function renderPagination() {
-          const paginationList = document.getElementById("pagination-list");
-          paginationList.innerHTML = ""; // Clear existing pagination
-
-          // Add previous button
-          const prevButton = document.createElement("li");
-          prevButton.innerHTML = `<a href="javascript:void(0)" onclick="changePage('prev')"><i class="bi bi-chevron-left"></i></a>`;
-          paginationList.appendChild(prevButton);
-
-          // Add page numbers
-          for (let i = 1; i <= totalPages; i++) {
-            const pageItem = document.createElement("li");
-            pageItem.innerHTML = `<a href="javascript:void(0)" onclick="changePage(${i})">${i}</a>`;
-            if (i === currentPage) {
-              pageItem.querySelector("a").classList.add("active");
-            }
-            paginationList.appendChild(pageItem);
-          }
-
-          // Add next button
-          const nextButton = document.createElement("li");
-          nextButton.innerHTML = `<a href="javascript:void(0)" onclick="changePage('next')"><i class="bi bi-chevron-right"></i></a>`;
-          paginationList.appendChild(nextButton);
-        }
-
-        fetchBlogPosts(); // Initial fetch and render
-      </script>
-      <!-- /Blog Pagination Section -->
     </main>
 
     <footer id="footer" class="footer dark-background">
@@ -301,5 +204,128 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          const response = await fetch("data/press-news.json");
+          if (!response.ok) {
+            throw new Error("Failed to fetch press and news data");
+          }
+
+          const pressNews = await response.json();
+          const pressNewsContainer =
+            document.getElementById("press-news-cards");
+          const recentPostsContainer = document.getElementById("recent-posts");
+
+          // Sort press news by date (newest first)
+          pressNews.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+          // Function to format date
+          const formatDate = (dateString) => {
+            const options = { year: "numeric", month: "long", day: "numeric" };
+            return new Date(dateString).toLocaleDateString("en-US", options);
+          };
+
+          // Function to create press/news card
+          const createCard = (item) => {
+            return `
+              <div class="col-md-6" data-category="${item.category}">
+                <div class="card h-100">
+                  <img src="${item.image}" class="card-img-top" alt="${
+              item.title
+            }">
+                  <div class="card-body">
+                    <div class="meta-top">
+                      <ul>
+                        <li class="d-flex align-items-center">
+                          <i class="bi bi-folder"></i>
+                          <a href="#">${item.category}</a>
+                        </li>
+                        <li class="d-flex align-items-center">
+                          <i class="bi bi-calendar"></i>
+                          <time datetime="${item.date}">${formatDate(
+              item.date
+            )}</time>
+                        </li>
+                      </ul>
+                    </div>
+                    <h3 class="title">
+                      <a href="press-news-details.html?id=${item.id}">${
+              item.title
+            }</a>
+                    </h3>
+                    <p class="card-text">${item.shortDescription}</p>
+                    <div class="read-more">
+                      <a href="press-news-details.html?id=${
+                        item.id
+                      }">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `;
+          };
+
+          // Populate main cards
+          pressNewsContainer.innerHTML = pressNews.map(createCard).join("");
+
+          // Populate recent posts
+          const recentPosts = pressNews.slice(0, 3);
+          recentPostsContainer.innerHTML = recentPosts
+            .map(
+              (item) => `
+            <div class="post-item">
+              <img src="${item.image}" alt="${item.title}" class="post-img">
+              <div>
+                <h4><a href="press-news-details.html?id=${item.id}">${
+                item.title
+              }</a></h4>
+                <time datetime="${item.date}">${formatDate(item.date)}</time>
+              </div>
+            </div>
+          `
+            )
+            .join("");
+
+          // Category filtering
+          const categoryLinks = document.querySelectorAll(".category-link");
+          categoryLinks.forEach((link) => {
+            link.addEventListener("click", (e) => {
+              e.preventDefault();
+              const category = e.target.dataset.category;
+
+              // Update active state
+              categoryLinks.forEach((l) => l.classList.remove("active"));
+              e.target.classList.add("active");
+
+              // Filter cards
+              const cards = document.querySelectorAll(
+                "#press-news-cards .col-md-6"
+              );
+              cards.forEach((card) => {
+                if (category === "all" || card.dataset.category === category) {
+                  card.style.display = "block";
+                } else {
+                  card.style.display = "none";
+                }
+              });
+            });
+          });
+        } catch (error) {
+          console.error("Error:", error);
+          const pressNewsContainer =
+            document.getElementById("press-news-cards");
+          pressNewsContainer.innerHTML = `
+            <div class="col-12">
+              <div class="alert alert-danger">
+                <p>${error.message}</p>
+                <p>Please try again later or contact support if the problem persists.</p>
+              </div>
+            </div>
+          `;
+        }
+      });
+    </script>
   </body>
 </html>
