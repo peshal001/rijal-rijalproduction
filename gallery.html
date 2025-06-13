@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" type="x-icon" href="assets\img\movie logo.png">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Gallery - R&R Production</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets\img\movie logo.png" alt="" style="height: 60px; width: auto;">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li class="dropdown"><a href="#"><span>Portfolio</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="index.html#portfolio">Films & Projects</a></li>
+              <li><a href="Behind_the_scenes.html">Behind the scenes</a></li>
+              <li><a href="index.html#testimonials">Testimonials</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#team">Team</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li class="dropdown"><a href="#"><span>News & Updates</span> <i
+                class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="events.html">Events</a></li>
+              <li class="dropdown"><a href="#"><span>Award & Recognization</span> <i
+                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#" class="active">Gallery</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Page Title Section -->
+    <div class="page-title dark-background">
+      <div class="container position-relative">
+        <h1>Our Visual Journey</h1>
+        <p>Explore our cinematic moments, behind-the-scenes glimpses, and creative storytelling through our curated collection of images.</p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Gallery</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <!-- End Page Title Section -->
+
+    <!-- Gallery Header -->
+    <div class="gallery-header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h2>Featured Collections</h2>
+            <p>Browse through our extensive collection of film stills, production photos, and exclusive behind-the-scenes moments from our award-winning productions.</p>
+          </div>
+          <div class="col-lg-6">
+            <div class="search-container">
+              <input type="text" id="searchBar" placeholder="Search by movie name..." class="search-bar" onkeyup="searchMovies()" />
+              <i class="bi bi-search search-icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Side Navigation -->
+    <div id="sideNav" class="side-nav">
+      <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </a>
+      <div class="nav-header">
+        <h3>Film Collections</h3>
+      </div>
+      <div class="nav-categories">
+        <a href="javascript:void(0)" onclick="filterMovies('All')" class="active">
+          <i class="bi bi-collection"></i> All Films
+        </a>
+        <a href="javascript:void(0)" onclick="filterMovies('Kaira')">
+          <i class="bi bi-film"></i> Kaira
+        </a>
+        <a href="javascript:void(0)" onclick="filterMovies('December falls')">
+          <i class="bi bi-film"></i> December Falls
+        </a>
+        <a href="javascript:void(0)" onclick="filterMovies('Kasam')">
+          <i class="bi bi-film"></i> Kasam
+        </a>
+        <a href="javascript:void(0)" onclick="filterMovies('Dhuwa Yo Nasha')">
+          <i class="bi bi-film"></i> Dhuwa Yo Nasha
+        </a>
+        <a href="javascript:void(0)" onclick="filterMovies('Ganapati')">
+          <i class="bi bi-film"></i> Ganapati
+        </a>
+        <a href="javascript:void(0)" onclick="filterMovies('Upcoming')">
+          <i class="bi bi-calendar-event"></i> Upcoming Projects
+        </a>
+      </div>
+      <div class="nav-footer">
+      <div class="social-links">
+          <a href="https://www.facebook.com/rijalandrijalproduction" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="#" target="_blank"><i class="bi bi-globe"></i></a>
+      </div>
+        <p>© 2024 R&R Production</p>
+      </div>
+    </div>
+
+    <!-- Menu Button -->
+    <div id="menuButton" class="menu-btn" onclick="toggleNav()">
+      <i class="bi bi-list"></i>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent">
+      <div id="movieGallery" class="gallery">
+        <!-- Movie items will be dynamically added here -->
+      </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal" class="modal" onclick="closeModal(event)">
+      <span class="close" onclick="closeModal(event)"></span>
+      <img id="modalImage" class="modal-content" />
+    </div>
+
+    <!-- Inline CSS -->
+    <style>
+      /* General Styles */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: #0a0a0a;
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      /* Gallery Header */
+      .gallery-header {
+        padding: 80px 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.7)), url('assets/img/gallery-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .gallery-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(255,215,0,0.1), transparent);
+      }
+
+      .gallery-header h2 {
+        font-size: 3rem;
+        color: #ffd700;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      }
+
+      .gallery-header p {
+        color: rgba(255,255,255,0.9);
+        font-size: 1.2rem;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Search Container */
+      .search-container {
+        position: relative;
+        max-width: 600px;
+        margin: 30px auto 0;
+      }
+
+      .search-bar {
+        width: 100%;
+        padding: 18px 25px;
+        padding-right: 60px;
+        border: 2px solid rgba(255,215,0,0.3);
+        border-radius: 50px;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        background-color: rgba(255,255,255,0.1);
+        color: #fff;
+        backdrop-filter: blur(10px);
+      }
+
+      .search-bar:focus {
+        outline: none;
+        border-color: #ffd700;
+        box-shadow: 0 0 20px rgba(255,215,0,0.2);
+        background-color: rgba(255,255,255,0.15);
+      }
+
+      .search-bar::placeholder {
+        color: rgba(255,255,255,0.6);
+      }
+
+      .search-icon {
+        position: absolute;
+        right: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #ffd700;
+        font-size: 1.3rem;
+        pointer-events: none;
+      }
+
+      /* Gallery Grid */
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 40px;
+        padding: 60px 40px;
+        max-width: 1600px;
+        margin: 0 auto;
+      }
+
+      .gallery .movie {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        transition: all 0.4s ease;
+        background-color: #1a1a1a;
+        cursor: pointer;
+      }
+
+      .gallery .movie:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(255,215,0,0.15);
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .gallery .movie:hover img {
+        transform: scale(1.08);
+      }
+
+      .movie-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 30px;
+        background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+        transform: translateY(100%);
+        transition: transform 0.4s ease;
+      }
+
+      .gallery .movie:hover .movie-info {
+        transform: translateY(0);
+      }
+
+      .movie-info h3 {
+        margin: 0;
+        color: #ffd700;
+        font-size: 1.4em;
+        margin-bottom: 8px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .movie-info .category {
+        color: rgba(255,255,255,0.9);
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+      }
+
+      .movie-info .category i {
+        margin-right: 8px;
+        color: #ffd700;
+      }
+
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        padding: 40px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.95);
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(10px);
+      }
+
+      .modal-content {
+        max-width: 85%;
+        max-height: 85vh;
+        margin: auto;
+        display: block;
+        border-radius: 15px;
+        box-shadow: 0 0 50px rgba(255,215,0,0.2);
+        transition: transform 0.3s ease;
+      }
+
+      .modal .close {
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        color: #fff;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: rgba(255,255,255,0.1);
+      }
+
+      .modal .close:hover {
+        color: #ffd700;
+        background-color: rgba(255,215,0,0.1);
+        transform: rotate(90deg);
+      }
+
+      /* No Results */
+      .no-results {
+        text-align: center;
+        padding: 100px 20px;
+        color: #fff;
+      }
+
+      .no-results i {
+        font-size: 4em;
+        color: #ffd700;
+        margin-bottom: 30px;
+        opacity: 0.8;
+      }
+
+      .no-results h3 {
+        font-size: 2em;
+        margin-bottom: 15px;
+        color: #ffd700;
+        font-weight: 600;
+      }
+
+      .no-results p {
+        color: rgba(255,255,255,0.7);
+        font-size: 1.1em;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      /* Loading Animation */
+      .loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+      }
+
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(255,215,0,0.3);
+        border-radius: 50%;
+        border-top-color: #ffd700;
+        animation: spin 1s ease-in-out infinite;
+      }
+
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .gallery {
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          gap: 30px;
+          padding: 40px 30px;
+        }
+
+        .gallery img {
+          height: 400px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .gallery-header {
+          padding: 60px 0;
+        }
+
+        .gallery-header h2 {
+          font-size: 2.5rem;
+        }
+
+        .gallery {
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 20px;
+          padding: 30px 20px;
+        }
+
+        .gallery img {
+          height: 350px;
+        }
+
+        .modal-content {
+          max-width: 95%;
+        }
+
+        .modal .close {
+          top: 20px;
+          right: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .gallery-header h2 {
+          font-size: 2rem;
+        }
+
+        .gallery {
+          grid-template-columns: 1fr;
+          padding: 20px;
+      }
+
+        .gallery img {
+          height: 300px;
+        }
+      }
+
+      /* Side Navigation */
+      .side-nav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.95);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 0;
+        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-header {
+        padding: 30px 20px;
+        border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        position: relative;
+      }
+
+      .nav-header h3 {
+        color: #ffd700;
+        margin: 0;
+        font-size: 1.5em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .nav-categories {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px 0;
+      }
+
+      .nav-categories a {
+        padding: 15px 30px;
+        font-size: 1.1em;
+        color: #fff;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+        border-left: 3px solid transparent;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .nav-categories a i {
+        margin-right: 15px;
+        font-size: 1.2em;
+        color: #ffd700;
+      }
+
+      .nav-categories a:hover {
+        color: #ffd700;
+        background-color: rgba(255, 215, 0, 0.1);
+        border-left: 3px solid #ffd700;
+      }
+
+      .nav-categories a.active {
+        color: #ffd700;
+        border-left: 3px solid #ffd700;
+        background-color: rgba(255, 215, 0, 0.1);
+      }
+
+      .nav-footer {
+        padding: 20px;
+        border-top: 1px solid rgba(255, 215, 0, 0.2);
+      }
+
+      .nav-footer .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 15px;
+      }
+
+      .nav-footer .social-links a {
+        color: #fff;
+        font-size: 1.3em;
+        transition: all 0.3s;
+      }
+
+      .nav-footer .social-links a:hover {
+        color: #ffd700;
+        transform: translateY(-3px);
+      }
+
+      .nav-footer p {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9em;
+        margin: 0;
+      }
+
+      .side-nav .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        cursor: pointer;
+        transition: all 0.3s;
+        padding: 5px;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.1);
+        text-decoration: none;
+        z-index: 1002;
+      }
+
+      .side-nav .close-btn:hover {
+        background-color: rgba(255, 215, 0, 0.2);
+      }
+
+      .side-nav .close-btn svg {
+        width: 1.5em;
+        height: 1.5em;
+        stroke: #fff;
+        transition: transform 0.3s ease;
+      }
+
+      .side-nav .close-btn:hover svg {
+        transform: rotate(90deg);
+        stroke: #ffd700;
+      }
+
+      /* Menu Button */
+      .menu-btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1001;
+        font-size: 2em;
+        background-color: rgba(0, 0, 0, 0.8);
+        border: none;
+        cursor: pointer;
+        color: #fff;
+        transition: all 0.3s;
+        padding: 10px;
+        border-radius: 5px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .menu-btn:hover {
+        color: #ffd700;
+        background-color: rgba(255, 215, 0, 0.1);
+      }
+
+      /* Scrollbar Styles */
+      .nav-categories::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      .nav-categories::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-categories::-webkit-scrollbar-thumb {
+        background: rgba(255, 215, 0, 0.3);
+        border-radius: 5px;
+      }
+
+      .nav-categories::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 215, 0, 0.5);
+      }
+
+      /* Main Content Blur */
+      #mainContent {
+        transition: filter 0.5s;
+      }
+
+      #mainContent.blurred {
+        filter: blur(5px);
+      }
+
+      /* Responsive Sidebar */
+      @media (max-width: 768px) {
+        .side-nav {
+          width: 0;
+        }
+
+        .side-nav.open {
+          width: 280px;
+        }
+
+        .nav-categories a {
+          padding: 12px 20px;
+          font-size: 1em;
+        }
+
+        .nav-header h3 {
+          font-size: 1.3em;
+        }
+      }
+    </style>
+
+    <!-- Inline JavaScript -->
+    <script>
+      let sideNavOpen = false;
+      let currentFilter = 'All';
+      let isLoading = false;
+
+      // Function to shuffle the movies array
+      function shuffleMovies(movies) {
+        for (let i = movies.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [movies[i], movies[j]] = [movies[j], movies[i]];
+        }
+        return movies;
+      }
+
+      // Initialize movies array
+      const movies = [
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka1.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka2.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka3.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka4.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka5.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka6.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka7.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka8.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka9.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka10.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka11.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka12.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka13.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka14.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka15.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka16.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka17.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka18.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka19.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka20.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka21.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka22.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka23.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka24.jpg" },
+        { name: "Kaira", category: "Kaira", img: "assets/img/gallery/ka25.jpg" },
+
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/D1.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d2.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d3.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d4.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d5.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d6.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d7.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d8.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d9.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d10.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d11.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d12.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d13.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d14.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d15.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d16.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d17.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d18.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d19.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d20.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d21.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d22.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d23.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d24.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d25.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d26.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d27.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d28.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d29.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d30.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d31.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d32.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d33.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d34.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d35.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d36.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d37.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d38.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d39.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d40.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d41.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d42.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d43.jpg" },
+        { name: "December falls", category: "December falls", img: "assets/img/gallery/d44.jpg" },
+
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k1.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k2.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k3.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k4.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k5.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k6.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k7.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k8.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k9.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k10.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k11.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k12.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k13.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k14.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k15.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k16.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k17.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k18.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k19.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k20.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k21.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k22.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k23.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k24.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k25.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k26.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k27.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k28.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k29.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k30.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k31.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k32.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k33.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k34.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k35.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k36.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k37.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k38.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k39.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k40.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k41.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k42.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k43.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k44.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k45.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k46.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k47.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k48.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k49.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k50.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k51.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k52.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k53.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k54.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k55.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k56.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k57.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k58.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k59.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k60.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k61.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k62.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k63.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k64.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k65.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k66.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k67.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k68.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k69.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k70.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k71.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k72.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k73.jpg" },
+        { name: "Kasam", category: "Kasam", img: "assets/img/gallery/k74.jpg" },
+
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh1.jpg" },
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh2.jpg" },
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh3.jpg" },
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh4.jpg" },
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh5.jpg" },
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh6.jpg" },
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh7.jpg" },
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh8.jpg" },
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh9.jpg" },
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh10.jpg" },
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh11.jpg" },
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh12.jpg" },
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh13.jpg" },
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh14.jpg" },
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh15.jpg" },
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh16.jpg" },
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh17.jpg" },
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh18.jpg" },
+        { name: "Dhuwa Yo Nasha", category: "Dhuwa Yo Nasha", img: "assets/img/gallery/dh19.jpg" },
+
+        { name: "Ganapati", category: "Ganapati", img: "assets/img/gallery/g1.jpg" },
+        { name: "Ganapati", category: "Ganapati", img: "assets/img/gallery/g2.jpg" },
+        { name: "Ganapati", category: "Ganapati", img: "assets/img/gallery/g3.jpg" },
+        { name: "Ganapati", category: "Ganapati", img: "assets/img/gallery/g4.jpg" },
+        { name: "Ganapati", category: "Ganapati", img: "assets/img/gallery/g5.jpg" },
+        { name: "Ganapati", category: "Ganapati", img: "assets/img/gallery/g6.jpg" },
+        { name: "Ganapati", category: "Ganapati", img: "assets/img/gallery/g7.jpg" },
+        { name: "Ganapati", category: "Ganapati", img: "assets/img/gallery/g8.jpg" },
+        { name: "Ganapati", category: "Ganapati", img: "assets/img/gallery/g9.jpg" },
+        { name: "Ganapati", category: "Ganapati", img: "assets/img/gallery/g10.jpg" },
+        { name: "Ganapati", category: "Ganapati", img: "assets/img/gallery/g11.jpg" },
+        { name: "Ganapati", category: "Ganapati", img: "assets/img/gallery/g12.jpg" },
+
+        { name: "Upcoming", category: "Upcoming", img: "assets/img/gallery/g15.jpg" },
+        { name: "Upcoming", category: "Upcoming", img: "assets/img/PostProduction.png" },
+        { name: "Upcoming", category: "Upcoming", img: "assets/img/PostProduction.png" }
+      ];
+
+      // Shuffle the movies array
+      const shuffledMovies = shuffleMovies(movies);
+
+      function showLoading() {
+        const loading = document.createElement('div');
+        loading.className = 'loading';
+        loading.innerHTML = '<div class="loading-spinner"></div>';
+        document.body.appendChild(loading);
+        isLoading = true;
+      }
+
+      function hideLoading() {
+        const loading = document.querySelector('.loading');
+        if (loading) {
+          loading.remove();
+        }
+        isLoading = false;
+      }
+
+      function toggleNav() {
+        if (sideNavOpen) {
+          closeNav();
+        } else {
+          openNav();
+        }
+      }
+
+      function openNav() {
+        const sideNav = document.getElementById("sideNav");
+        const menuButton = document.getElementById("menuButton");
+        const mainContent = document.getElementById("mainContent");
+        
+        sideNav.style.width = "300px";
+        menuButton.style.display = "none";
+        sideNav.querySelector(".close-btn").style.display = "block";
+        mainContent.classList.add("blurred");
+        sideNavOpen = true;
+
+        // Add active class to current filter
+        const filterLinks = sideNav.querySelectorAll('a[onclick^="filterMovies"]');
+        filterLinks.forEach(link => {
+          if (link.textContent === currentFilter) {
+            link.classList.add('active');
+          }
+        });
+      }
+
+      function closeNav() {
+        const sideNav = document.getElementById("sideNav");
+        const menuButton = document.getElementById("menuButton");
+        const mainContent = document.getElementById("mainContent");
+        
+        sideNav.style.width = "0";
+        menuButton.style.display = "block";
+        sideNav.querySelector(".close-btn").style.display = "none";
+        mainContent.classList.remove("blurred");
+        sideNavOpen = false;
+      }
+
+      async function filterMovies(category) {
+        if (isLoading) return;
+        
+        currentFilter = category;
+        showLoading();
+
+        // Update active state in side nav
+        const filterLinks = document.querySelectorAll('#sideNav a[onclick^="filterMovies"]');
+        filterLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.textContent === category) {
+            link.classList.add('active');
+          }
+        });
+
+        // Simulate loading delay for smooth transition
+        await new Promise(resolve => setTimeout(resolve, 500));
+        const filteredMovies = category === "All" ? movies : movies.filter(movie => movie.category === category);
+        displayMovies(filteredMovies);
+        hideLoading();
+      }
+
+      async function searchMovies() {
+        if (isLoading) return;
+        
+        showLoading();
+        const searchTerm = document.getElementById('searchBar').value.toLowerCase();
+        
+        // Simulate loading delay for smooth transition
+        await new Promise(resolve => setTimeout(resolve, 300));
+        const filteredMovies = movies.filter(movie => 
+          movie.name.toLowerCase().includes(searchTerm) || 
+          movie.category.toLowerCase().includes(searchTerm)
+        );
+        displayMovies(filteredMovies);
+        hideLoading();
+      }
+
+      function displayMovies(filteredMovies) {
+        const gallery = document.getElementById('movieGallery');
+        gallery.innerHTML = "";
+
+        if (filteredMovies.length === 0) {
+          gallery.innerHTML = `
+            <div class="no-results">
+              <i class="bi bi-search"></i>
+              <h3>No results found</h3>
+              <p>Try adjusting your search or filter to find what you're looking for.</p>
+            </div>
+          `;
+          return;
+        }
+
+        filteredMovies.forEach((movie, index) => {
+          const movieElement = document.createElement('div');
+          movieElement.className = 'movie';
+          movieElement.style.animationDelay = `${index * 0.1}s`;
+          movieElement.innerHTML = `
+            <img src="${movie.img}" alt="${movie.name}" onclick="openModal('${movie.img}', '${movie.name}')" />
+            <div class="movie-info">
+              <h3>${movie.name}</h3>
+              <span class="category">
+                <i class="bi bi-film"></i>
+                ${movie.category}
+              </span>
+            </div>
+    `;
+          gallery.appendChild(movieElement);
+        });
+      }
+
+      function openModal(imgSrc, title) {
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modalImage');
+        
+        modal.style.display = "flex";
+        modalImage.src = imgSrc;
+        modalImage.alt = title;
+
+        // Add fade-in animation
+        modal.style.opacity = "0";
+        setTimeout(() => {
+          modal.style.opacity = "1";
+        }, 10);
+
+        // Prevent body scroll
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal(event) {
+        if (event.target === document.getElementById('modal')) {
+        const modal = document.getElementById('modal');
+          modal.style.opacity = "0";
+          setTimeout(() => {
+            modal.style.display = "none";
+            // Restore body scroll
+            document.body.style.overflow = "auto";
+          }, 300);
+        }
+      }
+
+      // Close modal with escape key
+      document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+          closeModal({ target: document.getElementById('modal') });
+      }
+      });
+
+      // Initialize by showing all movies
+      displayMovies(movies);
+
+      // Add scroll animation
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.movie').forEach(movie => {
+        observer.observe(movie);
+      });
+
+      // Debounce search function
+      let searchTimeout;
+      document.getElementById('searchBar').addEventListener('input', function() {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(searchMovies, 300);
+      });
+    </script>
+  </main>
+
+
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <h3 class="sitename">R&R Production</h3>
+      <p>R&R Production is committed to creating impactful films that showcase the beauty and culture of Nepal.<br> With
+        a focus on storytelling, we aim to bring fresh and unique perspectives to the Nepali film industry. <br>Our
+        mission is to inspire, entertain, and connect audiences through the art of cinema, one film at a time.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.facebook.com/rijalandrijalproduction"><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-skype"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          &copy;<span>Copyright</span> <strong class="px-1 sitename">R&R Production</strong> <span>All Rights
+            Reserved</span>
+        </div>
+        <div class="credits">
+          Designed by <a href="https://Bechchha.com/">Bechchha.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
