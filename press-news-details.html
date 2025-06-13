@@ -90,59 +90,132 @@
           <div class="row">
             <div class="col-lg-8">
               <div class="press-news-details-content">
-                <div class="press-news-image mb-4">
-                  <img
-                    id="press-news-image"
-                    src=""
-                    alt=""
-                    class="img-fluid rounded"
-                  />
+                <!-- Featured Image -->
+                <div class="featured-image mb-4">
+                  <img id="press-news-image" src="" alt="" class="img-fluid rounded">
                 </div>
-                <div class="press-news-info">
-                  <h2 id="press-news-heading" class="title"></h2>
-                  <div class="meta-top">
-                    <ul>
-                      <li class="d-flex align-items-center">
-                        <i class="bi bi-folder"></i>
-                        <span id="press-news-category"></span>
-                      </li>
-                      <li class="d-flex align-items-center">
-                        <i class="bi bi-person"></i>
-                        <span id="press-news-author"></span>
-                      </li>
-                      <li class="d-flex align-items-center">
-                        <i class="bi bi-calendar"></i>
-                        <time id="press-news-date" datetime=""></time>
-                      </li>
-                    </ul>
+
+                <!-- Press News Header -->
+                <div class="press-news-header mb-4">
+                  <div class="category-badge mb-3">
+                    <span id="press-news-category" class="badge"></span>
                   </div>
-                  <div class="content">
-                    <p id="press-news-content"></p>
+                  <h1 id="press-news-heading" class="mb-3"></h1>
+                  <div class="press-news-meta d-flex align-items-center gap-4">
+                    <div class="author d-flex align-items-center">
+                      <img id="author-image" src="" alt="" class="rounded-circle me-2">
+                      <div>
+                        <p class="author-name mb-0" id="press-news-author"></p>
+                        <p class="post-date mb-0" id="press-news-date"></p>
+                      </div>
+                    </div>
+                    <div class="reading-time">
+                      <i class="bi bi-clock"></i>
+                      <span id="reading-time">5 min read</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Press News Content -->
+                <div class="press-news-content mb-4">
+                  <div id="press-news-content"></div>
+                </div>
+
+                <!-- Tags -->
+                <div class="press-news-tags mb-4">
+                  <h5>Tags:</h5>
+                  <div id="press-news-tags" class="d-flex flex-wrap gap-2"></div>
+                </div>
+
+                <!-- Social Share -->
+                <div class="social-share mb-4">
+                  <h5>Share this post:</h5>
+                  <div class="share-buttons d-flex gap-2">
+                    <a href="#" class="btn btn-facebook" onclick="shareOnFacebook()">
+                      <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" class="btn btn-twitter" onclick="shareOnTwitter()">
+                      <i class="bi bi-twitter-x"></i>
+                    </a>
+                    <a href="#" class="btn btn-linkedin" onclick="shareOnLinkedIn()">
+                      <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" class="btn btn-whatsapp" onclick="shareOnWhatsApp()">
+                      <i class="bi bi-whatsapp"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Author Bio -->
+                <div class="author-bio mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex align-items-center">
+                        <img id="author-bio-image" src="" alt="" class="rounded-circle me-3">
+                        <div>
+                          <h5 id="author-bio-name"></h5>
+                          <p id="author-bio-text" class="mb-0"></p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+
             <div class="col-lg-4">
-              <div class="sidebar">
+              <!-- Sidebar -->
+              <div class="press-news-sidebar">
+                <!-- Search Widget -->
+                <div class="widget search-widget mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="widget-title">Search</h5>
+                      <form class="search-form">
+                        <div class="input-group">
+                          <input type="text" class="form-control" placeholder="Search news...">
+                          <button class="btn btn-primary" type="submit">
+                            <i class="bi bi-search"></i>
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
                 <!-- Categories Widget -->
-                <div class="widget-item">
-                  <h3 class="widget-title">Categories</h3>
-                  <ul class="categories-list">
-                    <li><a href="press-news.html?category=all">All</a></li>
-                    <li>
-                      <a href="press-news.html?category=Press Release"
-                        >Press Releases</a
-                      >
-                    </li>
-                    <li><a href="press-news.html?category=News">News</a></li>
-                  </ul>
+                <div class="widget categories-widget mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="widget-title">Categories</h5>
+                      <ul class="categories-list" id="categories-list">
+                        <!-- Categories will be populated by JavaScript -->
+                      </ul>
+                    </div>
+                  </div>
                 </div>
 
                 <!-- Recent Posts Widget -->
-                <div class="widget-item">
-                  <h3 class="widget-title">Recent Posts</h3>
-                  <div id="recent-posts">
-                    <!-- Recent posts will be populated by JavaScript -->
+                <div class="widget recent-posts-widget mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="widget-title">Recent Posts</h5>
+                      <div class="recent-posts" id="recent-posts">
+                        <!-- Recent posts will be populated by JavaScript -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tags Widget -->
+                <div class="widget tags-widget mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="widget-title">Popular Tags</h5>
+                      <div class="tags-cloud" id="tags-cloud">
+                        <!-- Tags will be populated by JavaScript -->
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -229,100 +302,377 @@
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
 
+    <style>
+      .press-news-details-content {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .featured-image {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .featured-image img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+
+      .category-badge .badge {
+        background: #e31c25;
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+        border-radius: 50px;
+      }
+
+      .press-news-header h1 {
+        font-size: 2.5rem;
+        line-height: 1.3;
+        color: #333;
+      }
+
+      .press-news-meta {
+        color: #666;
+      }
+
+      .press-news-meta .author img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+      }
+
+      .press-news-meta .author-name {
+        font-weight: 500;
+        color: #333;
+      }
+
+      .press-news-meta .post-date {
+        font-size: 0.9rem;
+      }
+
+      .press-news-meta .reading-time {
+        font-size: 0.9rem;
+      }
+
+      .press-news-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #444;
+      }
+
+      .press-news-content p {
+        margin-bottom: 1.5rem;
+      }
+
+      .press-news-tags .badge {
+        background: #f8f9fa;
+        color: #666;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .press-news-tags .badge:hover {
+        background: #e31c25;
+        color: #fff;
+      }
+
+      .social-share .btn {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: #fff;
+        transition: all 0.3s ease;
+      }
+
+      .social-share .btn-facebook {
+        background: #1877f2;
+      }
+
+      .social-share .btn-twitter {
+        background: #000;
+      }
+
+      .social-share .btn-linkedin {
+        background: #0a66c2;
+      }
+
+      .social-share .btn-whatsapp {
+        background: #25d366;
+      }
+
+      .social-share .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .author-bio .card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .author-bio img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+      }
+
+      .press-news-sidebar .card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .press-news-sidebar .widget-title {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        color: #333;
+      }
+
+      .search-form .form-control {
+        border-radius: 10px 0 0 10px;
+        border: 1px solid #ddd;
+        height: 50px;
+      }
+
+      .search-form .btn {
+        border-radius: 0 10px 10px 0;
+        padding: 0 1.5rem;
+      }
+
+      .categories-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .categories-list li {
+        margin-bottom: 1rem;
+      }
+
+      .categories-list a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .categories-list a:hover {
+        color: #e31c25;
+      }
+
+      .categories-list span {
+        background: #f8f9fa;
+        padding: 0.25rem 0.75rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+      }
+
+      .recent-posts .post-item {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      .recent-posts .post-item:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .recent-posts .post-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .recent-posts .post-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .recent-posts .post-title {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+      }
+
+      .recent-posts .post-title a {
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .recent-posts .post-title a:hover {
+        color: #e31c25;
+      }
+
+      .recent-posts .post-date {
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      .tags-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tags-cloud .badge {
+        background: #f8f9fa;
+        color: #666;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .tags-cloud .badge:hover {
+        background: #e31c25;
+        color: #fff;
+      }
+
+      @media (max-width: 768px) {
+        .press-news-header h1 {
+          font-size: 2rem;
+        }
+
+        .featured-image img {
+          height: 300px;
+        }
+
+        .press-news-meta {
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+    </style>
+
     <script>
       document.addEventListener("DOMContentLoaded", async () => {
         try {
-          // Get the ID from URL parameters
           const urlParams = new URLSearchParams(window.location.search);
-          const id = urlParams.get("id");
+          const titleParam = urlParams.get("title");
 
-          if (!id) {
-            throw new Error("No press/news ID provided");
+          if (!titleParam) {
+            throw new Error("No press/news title provided");
           }
 
-          // Fetch press/news data
+          const decodedTitle = decodeURIComponent(titleParam);
+
           const response = await fetch("data/press-news.json");
           if (!response.ok) {
             throw new Error("Failed to fetch press/news data");
           }
 
-          const pressNews = await response.json();
-          const pressNewsItem = pressNews.find(
-            (item) => item.id === parseInt(id)
-          );
+          const items = await response.json();
+          const item = items.find((p) => p.title === decodedTitle);
 
-          if (!pressNewsItem) {
-            throw new Error("Press/news item not found");
+          if (!item) {
+            throw new Error(`Press/News item not found for title: ${decodedTitle}`);
           }
 
-          // Format date
-          const formatDate = (dateString) => {
-            const options = { year: "numeric", month: "long", day: "numeric" };
-            return new Date(dateString).toLocaleDateString("en-US", options);
-          };
-
           // Update page title
-          document.title = `${pressNewsItem.title} - R&R Production`;
-          document.getElementById("press-news-title").textContent =
-            pressNewsItem.title;
+          document.title = `${item.title} - R&R Production`;
 
-          // Update press/news details
-          document.getElementById("press-news-heading").textContent =
-            pressNewsItem.title;
-          document.getElementById("press-news-image").src = pressNewsItem.image;
-          document.getElementById("press-news-image").alt = pressNewsItem.title;
-          document.getElementById("press-news-category").textContent =
-            pressNewsItem.category;
-          document.getElementById("press-news-author").textContent =
-            pressNewsItem.author;
-          document.getElementById("press-news-date").textContent = formatDate(
-            pressNewsItem.date
-          );
-          document
-            .getElementById("press-news-date")
-            .setAttribute("datetime", pressNewsItem.date);
+          // Update main content
+          document.getElementById("press-news-image").src = item.image;
+          document.getElementById("press-news-image").alt = item.title;
+          document.getElementById("press-news-category").textContent = item.category;
+          document.getElementById("press-news-heading").textContent = item.title;
+          document.getElementById("author-image").src = item.author_image;
+          document.getElementById("author-image").alt = item.author;
+          document.getElementById("press-news-author").textContent = item.author;
+          document.getElementById("press-news-date").textContent = item.date;
+          document.getElementById("press-news-content").innerHTML = item.content;
 
-          // Format content with line breaks
-          const formattedContent = pressNewsItem.content
-            .split("\n\n")
-            .map((paragraph) => {
-              if (paragraph.startsWith("- ")) {
-                return `<ul><li>${paragraph.substring(2)}</li></ul>`;
-              }
-              return `<p>${paragraph}</p>`;
-            })
-            .join("");
-          document.getElementById("press-news-content").innerHTML =
-            formattedContent;
+          // Calculate reading time (assuming 200 words per minute)
+          const wordCount = item.content.split(/\s+/).length;
+          const readingTime = Math.ceil(wordCount / 200);
+          document.getElementById("reading-time").textContent = `${readingTime} min read`;
+
+          // Update tags
+          const tagsContainer = document.getElementById("press-news-tags");
+          if (item.tags && item.tags.length > 0) {
+            tagsContainer.innerHTML = item.tags.map(tag => `
+              <span class="badge">${tag}</span>
+            `).join('');
+          }
+
+          // Update author bio
+          document.getElementById("author-bio-image").src = item.author_image;
+          document.getElementById("author-bio-image").alt = item.author;
+          document.getElementById("author-bio-name").textContent = item.author;
+          document.getElementById("author-bio-text").textContent = item.author_bio || "Film industry professional with extensive experience in production and media relations.";
+
+          // Populate categories
+          const categories = [...new Set(items.map(p => p.category))];
+          const categoriesList = document.getElementById("categories-list");
+          categoriesList.innerHTML = categories.map(category => `
+            <li>
+              <a href="press-news.html?category=${encodeURIComponent(category)}">
+                ${category}
+                <span>${items.filter(p => p.category === category).length}</span>
+              </a>
+            </li>
+          `).join('');
 
           // Populate recent posts
-          const recentPosts = pressNews
-            .filter((item) => item.id !== parseInt(id))
+          const recentPosts = items
+            .filter(p => p.title !== item.title)
             .sort((a, b) => new Date(b.date) - new Date(a.date))
             .slice(0, 3);
-
+          
           const recentPostsContainer = document.getElementById("recent-posts");
-          recentPostsContainer.innerHTML = recentPosts
-            .map(
-              (item) => `
+          recentPostsContainer.innerHTML = recentPosts.map(p => `
             <div class="post-item">
-              <img src="${item.image}" alt="${item.title}" class="post-img">
+              <div class="post-img">
+                <img src="${p.image}" alt="${p.title}">
+              </div>
               <div>
-                <h4><a href="press-news-details.html?id=${item.id}">${
-                item.title
-              }</a></h4>
-                <time datetime="${item.date}">${formatDate(item.date)}</time>
+                <h6 class="post-title">
+                  <a href="press-news-details.html?title=${encodeURIComponent(p.title)}">${p.title}</a>
+                </h6>
+                <p class="post-date">${p.date}</p>
               </div>
             </div>
-          `
-            )
-            .join("");
+          `).join('');
+
+          // Populate tags cloud
+          const allTags = items.flatMap(p => p.tags || []);
+          const tagCounts = allTags.reduce((acc, tag) => {
+            acc[tag] = (acc[tag] || 0) + 1;
+            return acc;
+          }, {});
+
+          const tagsCloud = document.getElementById("tags-cloud");
+          tagsCloud.innerHTML = Object.entries(tagCounts)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10)
+            .map(([tag, count]) => `
+              <span class="badge">${tag}</span>
+            `).join('');
+
         } catch (error) {
           console.error("Error:", error);
-          const pressNewsDetailsContent = document.querySelector(
-            ".press-news-details-content"
-          );
-          pressNewsDetailsContent.innerHTML = `
+          const mainContent = document.querySelector(".press-news-details-content");
+          mainContent.innerHTML = `
             <div class="alert alert-danger">
               <p>${error.message}</p>
               <p>Please try again later or contact support if the problem persists.</p>
@@ -330,6 +680,29 @@
           `;
         }
       });
+
+      // Social sharing functions
+      function shareOnFacebook() {
+        const url = encodeURIComponent(window.location.href);
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+      }
+
+      function shareOnTwitter() {
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent(document.getElementById("press-news-heading").textContent);
+        window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank');
+      }
+
+      function shareOnLinkedIn() {
+        const url = encodeURIComponent(window.location.href);
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+      }
+
+      function shareOnWhatsApp() {
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent(document.getElementById("press-news-heading").textContent);
+        window.open(`https://wa.me/?text=${title}%20${url}`, '_blank');
+      }
     </script>
   </body>
 </html>
